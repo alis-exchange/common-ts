@@ -1,0 +1,80 @@
+// GENERATED CODE -- DO NOT EDIT!
+
+// package: google.iam.v1beta
+// file: google/iam/v1beta/workload_identity_pool.proto
+
+import * as google_iam_v1beta_workload_identity_pool_pb from "../../../google/iam/v1beta/workload_identity_pool_pb";
+import * as google_longrunning_operations_pb from "../../../google/longrunning/operations_pb";
+import * as grpc from "grpc";
+
+interface IWorkloadIdentityPoolsService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
+  listWorkloadIdentityPools: grpc.MethodDefinition<google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolsRequest, google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolsResponse>;
+  getWorkloadIdentityPool: grpc.MethodDefinition<google_iam_v1beta_workload_identity_pool_pb.GetWorkloadIdentityPoolRequest, google_iam_v1beta_workload_identity_pool_pb.WorkloadIdentityPool>;
+  createWorkloadIdentityPool: grpc.MethodDefinition<google_iam_v1beta_workload_identity_pool_pb.CreateWorkloadIdentityPoolRequest, google_longrunning_operations_pb.Operation>;
+  updateWorkloadIdentityPool: grpc.MethodDefinition<google_iam_v1beta_workload_identity_pool_pb.UpdateWorkloadIdentityPoolRequest, google_longrunning_operations_pb.Operation>;
+  deleteWorkloadIdentityPool: grpc.MethodDefinition<google_iam_v1beta_workload_identity_pool_pb.DeleteWorkloadIdentityPoolRequest, google_longrunning_operations_pb.Operation>;
+  undeleteWorkloadIdentityPool: grpc.MethodDefinition<google_iam_v1beta_workload_identity_pool_pb.UndeleteWorkloadIdentityPoolRequest, google_longrunning_operations_pb.Operation>;
+  listWorkloadIdentityPoolProviders: grpc.MethodDefinition<google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolProvidersRequest, google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolProvidersResponse>;
+  getWorkloadIdentityPoolProvider: grpc.MethodDefinition<google_iam_v1beta_workload_identity_pool_pb.GetWorkloadIdentityPoolProviderRequest, google_iam_v1beta_workload_identity_pool_pb.WorkloadIdentityPoolProvider>;
+  createWorkloadIdentityPoolProvider: grpc.MethodDefinition<google_iam_v1beta_workload_identity_pool_pb.CreateWorkloadIdentityPoolProviderRequest, google_longrunning_operations_pb.Operation>;
+  updateWorkloadIdentityPoolProvider: grpc.MethodDefinition<google_iam_v1beta_workload_identity_pool_pb.UpdateWorkloadIdentityPoolProviderRequest, google_longrunning_operations_pb.Operation>;
+  deleteWorkloadIdentityPoolProvider: grpc.MethodDefinition<google_iam_v1beta_workload_identity_pool_pb.DeleteWorkloadIdentityPoolProviderRequest, google_longrunning_operations_pb.Operation>;
+  undeleteWorkloadIdentityPoolProvider: grpc.MethodDefinition<google_iam_v1beta_workload_identity_pool_pb.UndeleteWorkloadIdentityPoolProviderRequest, google_longrunning_operations_pb.Operation>;
+}
+
+export const WorkloadIdentityPoolsService: IWorkloadIdentityPoolsService;
+
+export interface IWorkloadIdentityPoolsServer extends grpc.UntypedServiceImplementation {
+  listWorkloadIdentityPools: grpc.handleUnaryCall<google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolsRequest, google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolsResponse>;
+  getWorkloadIdentityPool: grpc.handleUnaryCall<google_iam_v1beta_workload_identity_pool_pb.GetWorkloadIdentityPoolRequest, google_iam_v1beta_workload_identity_pool_pb.WorkloadIdentityPool>;
+  createWorkloadIdentityPool: grpc.handleUnaryCall<google_iam_v1beta_workload_identity_pool_pb.CreateWorkloadIdentityPoolRequest, google_longrunning_operations_pb.Operation>;
+  updateWorkloadIdentityPool: grpc.handleUnaryCall<google_iam_v1beta_workload_identity_pool_pb.UpdateWorkloadIdentityPoolRequest, google_longrunning_operations_pb.Operation>;
+  deleteWorkloadIdentityPool: grpc.handleUnaryCall<google_iam_v1beta_workload_identity_pool_pb.DeleteWorkloadIdentityPoolRequest, google_longrunning_operations_pb.Operation>;
+  undeleteWorkloadIdentityPool: grpc.handleUnaryCall<google_iam_v1beta_workload_identity_pool_pb.UndeleteWorkloadIdentityPoolRequest, google_longrunning_operations_pb.Operation>;
+  listWorkloadIdentityPoolProviders: grpc.handleUnaryCall<google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolProvidersRequest, google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolProvidersResponse>;
+  getWorkloadIdentityPoolProvider: grpc.handleUnaryCall<google_iam_v1beta_workload_identity_pool_pb.GetWorkloadIdentityPoolProviderRequest, google_iam_v1beta_workload_identity_pool_pb.WorkloadIdentityPoolProvider>;
+  createWorkloadIdentityPoolProvider: grpc.handleUnaryCall<google_iam_v1beta_workload_identity_pool_pb.CreateWorkloadIdentityPoolProviderRequest, google_longrunning_operations_pb.Operation>;
+  updateWorkloadIdentityPoolProvider: grpc.handleUnaryCall<google_iam_v1beta_workload_identity_pool_pb.UpdateWorkloadIdentityPoolProviderRequest, google_longrunning_operations_pb.Operation>;
+  deleteWorkloadIdentityPoolProvider: grpc.handleUnaryCall<google_iam_v1beta_workload_identity_pool_pb.DeleteWorkloadIdentityPoolProviderRequest, google_longrunning_operations_pb.Operation>;
+  undeleteWorkloadIdentityPoolProvider: grpc.handleUnaryCall<google_iam_v1beta_workload_identity_pool_pb.UndeleteWorkloadIdentityPoolProviderRequest, google_longrunning_operations_pb.Operation>;
+}
+
+export class WorkloadIdentityPoolsClient extends grpc.Client {
+  constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
+  listWorkloadIdentityPools(argument: google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolsRequest, callback: grpc.requestCallback<google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolsResponse>): grpc.ClientUnaryCall;
+  listWorkloadIdentityPools(argument: google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolsResponse>): grpc.ClientUnaryCall;
+  listWorkloadIdentityPools(argument: google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolsResponse>): grpc.ClientUnaryCall;
+  getWorkloadIdentityPool(argument: google_iam_v1beta_workload_identity_pool_pb.GetWorkloadIdentityPoolRequest, callback: grpc.requestCallback<google_iam_v1beta_workload_identity_pool_pb.WorkloadIdentityPool>): grpc.ClientUnaryCall;
+  getWorkloadIdentityPool(argument: google_iam_v1beta_workload_identity_pool_pb.GetWorkloadIdentityPoolRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1beta_workload_identity_pool_pb.WorkloadIdentityPool>): grpc.ClientUnaryCall;
+  getWorkloadIdentityPool(argument: google_iam_v1beta_workload_identity_pool_pb.GetWorkloadIdentityPoolRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1beta_workload_identity_pool_pb.WorkloadIdentityPool>): grpc.ClientUnaryCall;
+  createWorkloadIdentityPool(argument: google_iam_v1beta_workload_identity_pool_pb.CreateWorkloadIdentityPoolRequest, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  createWorkloadIdentityPool(argument: google_iam_v1beta_workload_identity_pool_pb.CreateWorkloadIdentityPoolRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  createWorkloadIdentityPool(argument: google_iam_v1beta_workload_identity_pool_pb.CreateWorkloadIdentityPoolRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  updateWorkloadIdentityPool(argument: google_iam_v1beta_workload_identity_pool_pb.UpdateWorkloadIdentityPoolRequest, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  updateWorkloadIdentityPool(argument: google_iam_v1beta_workload_identity_pool_pb.UpdateWorkloadIdentityPoolRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  updateWorkloadIdentityPool(argument: google_iam_v1beta_workload_identity_pool_pb.UpdateWorkloadIdentityPoolRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  deleteWorkloadIdentityPool(argument: google_iam_v1beta_workload_identity_pool_pb.DeleteWorkloadIdentityPoolRequest, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  deleteWorkloadIdentityPool(argument: google_iam_v1beta_workload_identity_pool_pb.DeleteWorkloadIdentityPoolRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  deleteWorkloadIdentityPool(argument: google_iam_v1beta_workload_identity_pool_pb.DeleteWorkloadIdentityPoolRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  undeleteWorkloadIdentityPool(argument: google_iam_v1beta_workload_identity_pool_pb.UndeleteWorkloadIdentityPoolRequest, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  undeleteWorkloadIdentityPool(argument: google_iam_v1beta_workload_identity_pool_pb.UndeleteWorkloadIdentityPoolRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  undeleteWorkloadIdentityPool(argument: google_iam_v1beta_workload_identity_pool_pb.UndeleteWorkloadIdentityPoolRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  listWorkloadIdentityPoolProviders(argument: google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolProvidersRequest, callback: grpc.requestCallback<google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolProvidersResponse>): grpc.ClientUnaryCall;
+  listWorkloadIdentityPoolProviders(argument: google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolProvidersRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolProvidersResponse>): grpc.ClientUnaryCall;
+  listWorkloadIdentityPoolProviders(argument: google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolProvidersRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1beta_workload_identity_pool_pb.ListWorkloadIdentityPoolProvidersResponse>): grpc.ClientUnaryCall;
+  getWorkloadIdentityPoolProvider(argument: google_iam_v1beta_workload_identity_pool_pb.GetWorkloadIdentityPoolProviderRequest, callback: grpc.requestCallback<google_iam_v1beta_workload_identity_pool_pb.WorkloadIdentityPoolProvider>): grpc.ClientUnaryCall;
+  getWorkloadIdentityPoolProvider(argument: google_iam_v1beta_workload_identity_pool_pb.GetWorkloadIdentityPoolProviderRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1beta_workload_identity_pool_pb.WorkloadIdentityPoolProvider>): grpc.ClientUnaryCall;
+  getWorkloadIdentityPoolProvider(argument: google_iam_v1beta_workload_identity_pool_pb.GetWorkloadIdentityPoolProviderRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1beta_workload_identity_pool_pb.WorkloadIdentityPoolProvider>): grpc.ClientUnaryCall;
+  createWorkloadIdentityPoolProvider(argument: google_iam_v1beta_workload_identity_pool_pb.CreateWorkloadIdentityPoolProviderRequest, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  createWorkloadIdentityPoolProvider(argument: google_iam_v1beta_workload_identity_pool_pb.CreateWorkloadIdentityPoolProviderRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  createWorkloadIdentityPoolProvider(argument: google_iam_v1beta_workload_identity_pool_pb.CreateWorkloadIdentityPoolProviderRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  updateWorkloadIdentityPoolProvider(argument: google_iam_v1beta_workload_identity_pool_pb.UpdateWorkloadIdentityPoolProviderRequest, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  updateWorkloadIdentityPoolProvider(argument: google_iam_v1beta_workload_identity_pool_pb.UpdateWorkloadIdentityPoolProviderRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  updateWorkloadIdentityPoolProvider(argument: google_iam_v1beta_workload_identity_pool_pb.UpdateWorkloadIdentityPoolProviderRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  deleteWorkloadIdentityPoolProvider(argument: google_iam_v1beta_workload_identity_pool_pb.DeleteWorkloadIdentityPoolProviderRequest, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  deleteWorkloadIdentityPoolProvider(argument: google_iam_v1beta_workload_identity_pool_pb.DeleteWorkloadIdentityPoolProviderRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  deleteWorkloadIdentityPoolProvider(argument: google_iam_v1beta_workload_identity_pool_pb.DeleteWorkloadIdentityPoolProviderRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  undeleteWorkloadIdentityPoolProvider(argument: google_iam_v1beta_workload_identity_pool_pb.UndeleteWorkloadIdentityPoolProviderRequest, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  undeleteWorkloadIdentityPoolProvider(argument: google_iam_v1beta_workload_identity_pool_pb.UndeleteWorkloadIdentityPoolProviderRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+  undeleteWorkloadIdentityPoolProvider(argument: google_iam_v1beta_workload_identity_pool_pb.UndeleteWorkloadIdentityPoolProviderRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_longrunning_operations_pb.Operation>): grpc.ClientUnaryCall;
+}

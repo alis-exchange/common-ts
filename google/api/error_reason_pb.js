@@ -1,0 +1,56 @@
+// source: google/api/error_reason.proto
+/**
+ * @fileoverview
+ * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
+ * @public
+ */
+// GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
+
+var jspb = require('google-protobuf');
+var goog = jspb;
+var global = globalThis;
+
+goog.exportSymbol('proto.google.api.ErrorReason', null, global);
+/**
+ * @enum {number}
+ */
+proto.google.api.ErrorReason = {
+  ERROR_REASON_UNSPECIFIED: 0,
+  SERVICE_DISABLED: 1,
+  BILLING_DISABLED: 2,
+  API_KEY_INVALID: 3,
+  API_KEY_SERVICE_BLOCKED: 4,
+  API_KEY_HTTP_REFERRER_BLOCKED: 7,
+  API_KEY_IP_ADDRESS_BLOCKED: 8,
+  API_KEY_ANDROID_APP_BLOCKED: 9,
+  API_KEY_IOS_APP_BLOCKED: 13,
+  RATE_LIMIT_EXCEEDED: 5,
+  RESOURCE_QUOTA_EXCEEDED: 6,
+  LOCATION_TAX_POLICY_VIOLATED: 10,
+  USER_PROJECT_DENIED: 11,
+  CONSUMER_SUSPENDED: 12,
+  CONSUMER_INVALID: 14,
+  SECURITY_POLICY_VIOLATED: 15,
+  ACCESS_TOKEN_EXPIRED: 16,
+  ACCESS_TOKEN_SCOPE_INSUFFICIENT: 17,
+  ACCOUNT_STATE_INVALID: 18,
+  ACCESS_TOKEN_TYPE_UNSUPPORTED: 19,
+  CREDENTIALS_MISSING: 20,
+  RESOURCE_PROJECT_INVALID: 21,
+  SESSION_COOKIE_INVALID: 23,
+  USER_BLOCKED_BY_ADMIN: 24,
+  RESOURCE_USAGE_RESTRICTION_VIOLATED: 25,
+  SYSTEM_PARAMETER_UNSUPPORTED: 26,
+  ORG_RESTRICTION_VIOLATION: 27,
+  ORG_RESTRICTION_HEADER_INVALID: 28
+};
+
+goog.object.extend(exports, proto.google.api);
+
+// Below is base64 encoded GeneratedCodeInfo proto
+// CikKAgUAEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxi5BCDEBAorCgQFAAIAEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxjLBCDjBAorCgQFAAIBEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxjqBCD6BAorCgQFAAICEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxiBBSCRBQorCgQFAAIDEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxiYBSCnBQorCgQFAAIEEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxiuBSDFBQorCgQFAAIFEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxjMBSDpBQorCgQFAAIGEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxjwBSCKBgorCgQFAAIHEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxiRBiCsBgorCgQFAAIIEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxizBiDKBgorCgQFAAIJEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxjSBiDlBgorCgQFAAIKEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxjsBiCDBworCgQFAAILEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxiKByCmBworCgQFAAIMEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxiuByDBBworCgQFAAINEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxjJByDbBworCgQFAAIOEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxjjByDzBworCgQFAAIPEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxj7ByCTCAorCgQFAAIQEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxibCCCvCAorCgQFAAIREh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxi3CCDWCAorCgQFAAISEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxjeCCDzCAorCgQFAAITEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxj7CCCYCQorCgQFAAIUEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxigCSCzCQorCgQFAAIVEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxi7CSDTCQorCgQFAAIWEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxjbCSDxCQorCgQFAAIXEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxj5CSCOCgorCgQFAAIYEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxiWCiC5CgorCgQFAAIZEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxjBCiDdCgorCgQFAAIaEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxjlCiD+CgorCgQFAAIbEh1nb29nbGUvYXBpL2Vycm9yX3JlYXNvbi5wcm90bxiGCyCkCw==
