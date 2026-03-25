@@ -20,17 +20,17 @@ const grpc = {};
 grpc.web = require('grpc-web');
 
 
-var alis_open_iam_v1_iam_pb = require('../../../../../alis/open/iam/v1/iam_pb.js')
-
-var google_iam_v1_iam_policy_pb = require('../../../../../google/iam/v1/iam_policy_pb.js')
-
-var google_iam_v1_policy_pb = require('../../../../../google/iam/v1/policy_pb.js')
-
-var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js')
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js')
 
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js')
 
-var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js')
+var google_iam_v1_policy_pb = require('../../../../../google/iam/v1/policy_pb.js')
+
+var google_iam_v1_iam_policy_pb = require('../../../../../google/iam/v1/iam_policy_pb.js')
+
+var alis_open_iam_v1_iam_pb = require('../../../../../alis/open/iam/v1/iam_pb.js')
+
+var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js')
 
 var lf_a2a_v1_a2a_pb = require('../../../../../lf/a2a/v1/a2a_pb.js')
 const proto = {};
@@ -89,250 +89,6 @@ proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient =
    */
   this.hostname_ = hostname.replace(/\/+$/, '');
 
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.alis.open.iam.v1.AddIamBindingsRequest,
- *   !proto.google.iam.v1.Policy>}
- */
-const methodDescriptor_ThreadService_AddIamBindings = new grpc.web.MethodDescriptor(
-  '/alis.a2a.extension.history.v1.ThreadService/AddIamBindings',
-  grpc.web.MethodType.UNARY,
-  alis_open_iam_v1_iam_pb.AddIamBindingsRequest,
-  google_iam_v1_policy_pb.Policy,
-  /**
-   * @param {!proto.alis.open.iam.v1.AddIamBindingsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_iam_v1_policy_pb.Policy.deserializeBinary
-);
-
-
-/**
- * @param {!proto.alis.open.iam.v1.AddIamBindingsRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.google.iam.v1.Policy)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.google.iam.v1.Policy>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.addIamBindings =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/AddIamBindings',
-      request,
-      metadata || {},
-      methodDescriptor_ThreadService_AddIamBindings,
-      callback);
-};
-
-
-/**
- * @param {!proto.alis.open.iam.v1.AddIamBindingsRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.google.iam.v1.Policy>}
- *     Promise that resolves to the response
- */
-proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.addIamBindings =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/AddIamBindings',
-      request,
-      metadata || {},
-      methodDescriptor_ThreadService_AddIamBindings);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.alis.a2a.extension.history.v1.AppendThreadEventRequest,
- *   !proto.alis.a2a.extension.history.v1.AppendThreadEventResponse>}
- */
-const methodDescriptor_ThreadService_AppendThreadEvent = new grpc.web.MethodDescriptor(
-  '/alis.a2a.extension.history.v1.ThreadService/AppendThreadEvent',
-  grpc.web.MethodType.UNARY,
-  proto.alis.a2a.extension.history.v1.AppendThreadEventRequest,
-  proto.alis.a2a.extension.history.v1.AppendThreadEventResponse,
-  /**
-   * @param {!proto.alis.a2a.extension.history.v1.AppendThreadEventRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.alis.a2a.extension.history.v1.AppendThreadEventResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.alis.a2a.extension.history.v1.AppendThreadEventRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.alis.a2a.extension.history.v1.AppendThreadEventResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.alis.a2a.extension.history.v1.AppendThreadEventResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.appendThreadEvent =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/AppendThreadEvent',
-      request,
-      metadata || {},
-      methodDescriptor_ThreadService_AppendThreadEvent,
-      callback);
-};
-
-
-/**
- * @param {!proto.alis.a2a.extension.history.v1.AppendThreadEventRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.alis.a2a.extension.history.v1.AppendThreadEventResponse>}
- *     Promise that resolves to the response
- */
-proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.appendThreadEvent =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/AppendThreadEvent',
-      request,
-      metadata || {},
-      methodDescriptor_ThreadService_AppendThreadEvent);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.alis.open.iam.v1.BatchTestIamPermissionsRequest,
- *   !proto.alis.open.iam.v1.BatchTestIamPermissionsResponse>}
- */
-const methodDescriptor_ThreadService_BatchTestIamPermissions = new grpc.web.MethodDescriptor(
-  '/alis.a2a.extension.history.v1.ThreadService/BatchTestIamPermissions',
-  grpc.web.MethodType.UNARY,
-  alis_open_iam_v1_iam_pb.BatchTestIamPermissionsRequest,
-  alis_open_iam_v1_iam_pb.BatchTestIamPermissionsResponse,
-  /**
-   * @param {!proto.alis.open.iam.v1.BatchTestIamPermissionsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  alis_open_iam_v1_iam_pb.BatchTestIamPermissionsResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.alis.open.iam.v1.BatchTestIamPermissionsRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.alis.open.iam.v1.BatchTestIamPermissionsResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.alis.open.iam.v1.BatchTestIamPermissionsResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.batchTestIamPermissions =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/BatchTestIamPermissions',
-      request,
-      metadata || {},
-      methodDescriptor_ThreadService_BatchTestIamPermissions,
-      callback);
-};
-
-
-/**
- * @param {!proto.alis.open.iam.v1.BatchTestIamPermissionsRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.alis.open.iam.v1.BatchTestIamPermissionsResponse>}
- *     Promise that resolves to the response
- */
-proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.batchTestIamPermissions =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/BatchTestIamPermissions',
-      request,
-      metadata || {},
-      methodDescriptor_ThreadService_BatchTestIamPermissions);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.alis.a2a.extension.history.v1.DeleteThreadRequest,
- *   !proto.google.protobuf.Empty>}
- */
-const methodDescriptor_ThreadService_DeleteThread = new grpc.web.MethodDescriptor(
-  '/alis.a2a.extension.history.v1.ThreadService/DeleteThread',
-  grpc.web.MethodType.UNARY,
-  proto.alis.a2a.extension.history.v1.DeleteThreadRequest,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.alis.a2a.extension.history.v1.DeleteThreadRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
-);
-
-
-/**
- * @param {!proto.alis.a2a.extension.history.v1.DeleteThreadRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.google.protobuf.Empty)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.deleteThread =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/DeleteThread',
-      request,
-      metadata || {},
-      methodDescriptor_ThreadService_DeleteThread,
-      callback);
-};
-
-
-/**
- * @param {!proto.alis.a2a.extension.history.v1.DeleteThreadRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.google.protobuf.Empty>}
- *     Promise that resolves to the response
- */
-proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.deleteThread =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/DeleteThread',
-      request,
-      metadata || {},
-      methodDescriptor_ThreadService_DeleteThread);
 };
 
 
@@ -400,183 +156,122 @@ proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.getIamP
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.alis.a2a.extension.history.v1.GetThreadRequest,
- *   !proto.alis.a2a.extension.history.v1.Thread>}
+ *   !proto.google.iam.v1.SetIamPolicyRequest,
+ *   !proto.google.iam.v1.Policy>}
  */
-const methodDescriptor_ThreadService_GetThread = new grpc.web.MethodDescriptor(
-  '/alis.a2a.extension.history.v1.ThreadService/GetThread',
+const methodDescriptor_ThreadService_SetIamPolicy = new grpc.web.MethodDescriptor(
+  '/alis.a2a.extension.history.v1.ThreadService/SetIamPolicy',
   grpc.web.MethodType.UNARY,
-  proto.alis.a2a.extension.history.v1.GetThreadRequest,
-  proto.alis.a2a.extension.history.v1.Thread,
+  google_iam_v1_iam_policy_pb.SetIamPolicyRequest,
+  google_iam_v1_policy_pb.Policy,
   /**
-   * @param {!proto.alis.a2a.extension.history.v1.GetThreadRequest} request
+   * @param {!proto.google.iam.v1.SetIamPolicyRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.alis.a2a.extension.history.v1.Thread.deserializeBinary
+  google_iam_v1_policy_pb.Policy.deserializeBinary
 );
 
 
 /**
- * @param {!proto.alis.a2a.extension.history.v1.GetThreadRequest} request The
+ * @param {!proto.google.iam.v1.SetIamPolicyRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.alis.a2a.extension.history.v1.Thread)}
+ * @param {function(?grpc.web.RpcError, ?proto.google.iam.v1.Policy)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.alis.a2a.extension.history.v1.Thread>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.google.iam.v1.Policy>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.getThread =
+proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.setIamPolicy =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/GetThread',
+      '/alis.a2a.extension.history.v1.ThreadService/SetIamPolicy',
       request,
       metadata || {},
-      methodDescriptor_ThreadService_GetThread,
+      methodDescriptor_ThreadService_SetIamPolicy,
       callback);
 };
 
 
 /**
- * @param {!proto.alis.a2a.extension.history.v1.GetThreadRequest} request The
+ * @param {!proto.google.iam.v1.SetIamPolicyRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.alis.a2a.extension.history.v1.Thread>}
+ * @return {!Promise<!proto.google.iam.v1.Policy>}
  *     Promise that resolves to the response
  */
-proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.getThread =
+proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.setIamPolicy =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/GetThread',
+      '/alis.a2a.extension.history.v1.ThreadService/SetIamPolicy',
       request,
       metadata || {},
-      methodDescriptor_ThreadService_GetThread);
+      methodDescriptor_ThreadService_SetIamPolicy);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.alis.a2a.extension.history.v1.ListThreadEventsRequest,
- *   !proto.alis.a2a.extension.history.v1.ListThreadEventsResponse>}
+ *   !proto.alis.open.iam.v1.AddIamBindingsRequest,
+ *   !proto.google.iam.v1.Policy>}
  */
-const methodDescriptor_ThreadService_ListThreadEvents = new grpc.web.MethodDescriptor(
-  '/alis.a2a.extension.history.v1.ThreadService/ListThreadEvents',
+const methodDescriptor_ThreadService_AddIamBindings = new grpc.web.MethodDescriptor(
+  '/alis.a2a.extension.history.v1.ThreadService/AddIamBindings',
   grpc.web.MethodType.UNARY,
-  proto.alis.a2a.extension.history.v1.ListThreadEventsRequest,
-  proto.alis.a2a.extension.history.v1.ListThreadEventsResponse,
+  alis_open_iam_v1_iam_pb.AddIamBindingsRequest,
+  google_iam_v1_policy_pb.Policy,
   /**
-   * @param {!proto.alis.a2a.extension.history.v1.ListThreadEventsRequest} request
+   * @param {!proto.alis.open.iam.v1.AddIamBindingsRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.alis.a2a.extension.history.v1.ListThreadEventsResponse.deserializeBinary
+  google_iam_v1_policy_pb.Policy.deserializeBinary
 );
 
 
 /**
- * @param {!proto.alis.a2a.extension.history.v1.ListThreadEventsRequest} request The
+ * @param {!proto.alis.open.iam.v1.AddIamBindingsRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.alis.a2a.extension.history.v1.ListThreadEventsResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.google.iam.v1.Policy)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.alis.a2a.extension.history.v1.ListThreadEventsResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.google.iam.v1.Policy>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.listThreadEvents =
+proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.addIamBindings =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/ListThreadEvents',
+      '/alis.a2a.extension.history.v1.ThreadService/AddIamBindings',
       request,
       metadata || {},
-      methodDescriptor_ThreadService_ListThreadEvents,
+      methodDescriptor_ThreadService_AddIamBindings,
       callback);
 };
 
 
 /**
- * @param {!proto.alis.a2a.extension.history.v1.ListThreadEventsRequest} request The
+ * @param {!proto.alis.open.iam.v1.AddIamBindingsRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.alis.a2a.extension.history.v1.ListThreadEventsResponse>}
+ * @return {!Promise<!proto.google.iam.v1.Policy>}
  *     Promise that resolves to the response
  */
-proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.listThreadEvents =
+proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.addIamBindings =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/ListThreadEvents',
+      '/alis.a2a.extension.history.v1.ThreadService/AddIamBindings',
       request,
       metadata || {},
-      methodDescriptor_ThreadService_ListThreadEvents);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.alis.a2a.extension.history.v1.ListThreadsRequest,
- *   !proto.alis.a2a.extension.history.v1.ListThreadsResponse>}
- */
-const methodDescriptor_ThreadService_ListThreads = new grpc.web.MethodDescriptor(
-  '/alis.a2a.extension.history.v1.ThreadService/ListThreads',
-  grpc.web.MethodType.UNARY,
-  proto.alis.a2a.extension.history.v1.ListThreadsRequest,
-  proto.alis.a2a.extension.history.v1.ListThreadsResponse,
-  /**
-   * @param {!proto.alis.a2a.extension.history.v1.ListThreadsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.alis.a2a.extension.history.v1.ListThreadsResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.alis.a2a.extension.history.v1.ListThreadsRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.alis.a2a.extension.history.v1.ListThreadsResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.alis.a2a.extension.history.v1.ListThreadsResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.listThreads =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/ListThreads',
-      request,
-      metadata || {},
-      methodDescriptor_ThreadService_ListThreads,
-      callback);
-};
-
-
-/**
- * @param {!proto.alis.a2a.extension.history.v1.ListThreadsRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.alis.a2a.extension.history.v1.ListThreadsResponse>}
- *     Promise that resolves to the response
- */
-proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.listThreads =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/ListThreads',
-      request,
-      metadata || {},
-      methodDescriptor_ThreadService_ListThreads);
+      methodDescriptor_ThreadService_AddIamBindings);
 };
 
 
@@ -644,61 +339,305 @@ proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.removeI
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.google.iam.v1.SetIamPolicyRequest,
- *   !proto.google.iam.v1.Policy>}
+ *   !proto.alis.a2a.extension.history.v1.ListThreadsRequest,
+ *   !proto.alis.a2a.extension.history.v1.ListThreadsResponse>}
  */
-const methodDescriptor_ThreadService_SetIamPolicy = new grpc.web.MethodDescriptor(
-  '/alis.a2a.extension.history.v1.ThreadService/SetIamPolicy',
+const methodDescriptor_ThreadService_ListThreads = new grpc.web.MethodDescriptor(
+  '/alis.a2a.extension.history.v1.ThreadService/ListThreads',
   grpc.web.MethodType.UNARY,
-  google_iam_v1_iam_policy_pb.SetIamPolicyRequest,
-  google_iam_v1_policy_pb.Policy,
+  proto.alis.a2a.extension.history.v1.ListThreadsRequest,
+  proto.alis.a2a.extension.history.v1.ListThreadsResponse,
   /**
-   * @param {!proto.google.iam.v1.SetIamPolicyRequest} request
+   * @param {!proto.alis.a2a.extension.history.v1.ListThreadsRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  google_iam_v1_policy_pb.Policy.deserializeBinary
+  proto.alis.a2a.extension.history.v1.ListThreadsResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.google.iam.v1.SetIamPolicyRequest} request The
+ * @param {!proto.alis.a2a.extension.history.v1.ListThreadsRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.google.iam.v1.Policy)}
+ * @param {function(?grpc.web.RpcError, ?proto.alis.a2a.extension.history.v1.ListThreadsResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.google.iam.v1.Policy>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.alis.a2a.extension.history.v1.ListThreadsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.setIamPolicy =
+proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.listThreads =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/SetIamPolicy',
+      '/alis.a2a.extension.history.v1.ThreadService/ListThreads',
       request,
       metadata || {},
-      methodDescriptor_ThreadService_SetIamPolicy,
+      methodDescriptor_ThreadService_ListThreads,
       callback);
 };
 
 
 /**
- * @param {!proto.google.iam.v1.SetIamPolicyRequest} request The
+ * @param {!proto.alis.a2a.extension.history.v1.ListThreadsRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.google.iam.v1.Policy>}
+ * @return {!Promise<!proto.alis.a2a.extension.history.v1.ListThreadsResponse>}
  *     Promise that resolves to the response
  */
-proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.setIamPolicy =
+proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.listThreads =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/SetIamPolicy',
+      '/alis.a2a.extension.history.v1.ThreadService/ListThreads',
       request,
       metadata || {},
-      methodDescriptor_ThreadService_SetIamPolicy);
+      methodDescriptor_ThreadService_ListThreads);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.alis.a2a.extension.history.v1.GetThreadRequest,
+ *   !proto.alis.a2a.extension.history.v1.Thread>}
+ */
+const methodDescriptor_ThreadService_GetThread = new grpc.web.MethodDescriptor(
+  '/alis.a2a.extension.history.v1.ThreadService/GetThread',
+  grpc.web.MethodType.UNARY,
+  proto.alis.a2a.extension.history.v1.GetThreadRequest,
+  proto.alis.a2a.extension.history.v1.Thread,
+  /**
+   * @param {!proto.alis.a2a.extension.history.v1.GetThreadRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.alis.a2a.extension.history.v1.Thread.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.alis.a2a.extension.history.v1.GetThreadRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.alis.a2a.extension.history.v1.Thread)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.alis.a2a.extension.history.v1.Thread>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.getThread =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/alis.a2a.extension.history.v1.ThreadService/GetThread',
+      request,
+      metadata || {},
+      methodDescriptor_ThreadService_GetThread,
+      callback);
+};
+
+
+/**
+ * @param {!proto.alis.a2a.extension.history.v1.GetThreadRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.alis.a2a.extension.history.v1.Thread>}
+ *     Promise that resolves to the response
+ */
+proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.getThread =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/alis.a2a.extension.history.v1.ThreadService/GetThread',
+      request,
+      metadata || {},
+      methodDescriptor_ThreadService_GetThread);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.alis.a2a.extension.history.v1.DeleteThreadRequest,
+ *   !proto.google.protobuf.Empty>}
+ */
+const methodDescriptor_ThreadService_DeleteThread = new grpc.web.MethodDescriptor(
+  '/alis.a2a.extension.history.v1.ThreadService/DeleteThread',
+  grpc.web.MethodType.UNARY,
+  proto.alis.a2a.extension.history.v1.DeleteThreadRequest,
+  google_protobuf_empty_pb.Empty,
+  /**
+   * @param {!proto.alis.a2a.extension.history.v1.DeleteThreadRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  google_protobuf_empty_pb.Empty.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.alis.a2a.extension.history.v1.DeleteThreadRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.google.protobuf.Empty)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.deleteThread =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/alis.a2a.extension.history.v1.ThreadService/DeleteThread',
+      request,
+      metadata || {},
+      methodDescriptor_ThreadService_DeleteThread,
+      callback);
+};
+
+
+/**
+ * @param {!proto.alis.a2a.extension.history.v1.DeleteThreadRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.google.protobuf.Empty>}
+ *     Promise that resolves to the response
+ */
+proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.deleteThread =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/alis.a2a.extension.history.v1.ThreadService/DeleteThread',
+      request,
+      metadata || {},
+      methodDescriptor_ThreadService_DeleteThread);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.alis.a2a.extension.history.v1.AppendThreadEventRequest,
+ *   !proto.alis.a2a.extension.history.v1.AppendThreadEventResponse>}
+ */
+const methodDescriptor_ThreadService_AppendThreadEvent = new grpc.web.MethodDescriptor(
+  '/alis.a2a.extension.history.v1.ThreadService/AppendThreadEvent',
+  grpc.web.MethodType.UNARY,
+  proto.alis.a2a.extension.history.v1.AppendThreadEventRequest,
+  proto.alis.a2a.extension.history.v1.AppendThreadEventResponse,
+  /**
+   * @param {!proto.alis.a2a.extension.history.v1.AppendThreadEventRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.alis.a2a.extension.history.v1.AppendThreadEventResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.alis.a2a.extension.history.v1.AppendThreadEventRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.alis.a2a.extension.history.v1.AppendThreadEventResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.alis.a2a.extension.history.v1.AppendThreadEventResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.appendThreadEvent =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/alis.a2a.extension.history.v1.ThreadService/AppendThreadEvent',
+      request,
+      metadata || {},
+      methodDescriptor_ThreadService_AppendThreadEvent,
+      callback);
+};
+
+
+/**
+ * @param {!proto.alis.a2a.extension.history.v1.AppendThreadEventRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.alis.a2a.extension.history.v1.AppendThreadEventResponse>}
+ *     Promise that resolves to the response
+ */
+proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.appendThreadEvent =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/alis.a2a.extension.history.v1.ThreadService/AppendThreadEvent',
+      request,
+      metadata || {},
+      methodDescriptor_ThreadService_AppendThreadEvent);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.alis.a2a.extension.history.v1.ListThreadEventsRequest,
+ *   !proto.alis.a2a.extension.history.v1.ListThreadEventsResponse>}
+ */
+const methodDescriptor_ThreadService_ListThreadEvents = new grpc.web.MethodDescriptor(
+  '/alis.a2a.extension.history.v1.ThreadService/ListThreadEvents',
+  grpc.web.MethodType.UNARY,
+  proto.alis.a2a.extension.history.v1.ListThreadEventsRequest,
+  proto.alis.a2a.extension.history.v1.ListThreadEventsResponse,
+  /**
+   * @param {!proto.alis.a2a.extension.history.v1.ListThreadEventsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.alis.a2a.extension.history.v1.ListThreadEventsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.alis.a2a.extension.history.v1.ListThreadEventsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.alis.a2a.extension.history.v1.ListThreadEventsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.alis.a2a.extension.history.v1.ListThreadEventsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.listThreadEvents =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/alis.a2a.extension.history.v1.ThreadService/ListThreadEvents',
+      request,
+      metadata || {},
+      methodDescriptor_ThreadService_ListThreadEvents,
+      callback);
+};
+
+
+/**
+ * @param {!proto.alis.a2a.extension.history.v1.ListThreadEventsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.alis.a2a.extension.history.v1.ListThreadEventsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.listThreadEvents =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/alis.a2a.extension.history.v1.ThreadService/ListThreadEvents',
+      request,
+      metadata || {},
+      methodDescriptor_ThreadService_ListThreadEvents);
 };
 
 
@@ -755,67 +694,6 @@ proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.streamT
       request,
       metadata || {},
       methodDescriptor_ThreadService_StreamThreadEvents);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.google.iam.v1.TestIamPermissionsRequest,
- *   !proto.google.iam.v1.TestIamPermissionsResponse>}
- */
-const methodDescriptor_ThreadService_TestIamPermissions = new grpc.web.MethodDescriptor(
-  '/alis.a2a.extension.history.v1.ThreadService/TestIamPermissions',
-  grpc.web.MethodType.UNARY,
-  google_iam_v1_iam_policy_pb.TestIamPermissionsRequest,
-  google_iam_v1_iam_policy_pb.TestIamPermissionsResponse,
-  /**
-   * @param {!proto.google.iam.v1.TestIamPermissionsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_iam_v1_iam_policy_pb.TestIamPermissionsResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.google.iam.v1.TestIamPermissionsRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.google.iam.v1.TestIamPermissionsResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.google.iam.v1.TestIamPermissionsResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.testIamPermissions =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/TestIamPermissions',
-      request,
-      metadata || {},
-      methodDescriptor_ThreadService_TestIamPermissions,
-      callback);
-};
-
-
-/**
- * @param {!proto.google.iam.v1.TestIamPermissionsRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.google.iam.v1.TestIamPermissionsResponse>}
- *     Promise that resolves to the response
- */
-proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.testIamPermissions =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/alis.a2a.extension.history.v1.ThreadService/TestIamPermissions',
-      request,
-      metadata || {},
-      methodDescriptor_ThreadService_TestIamPermissions);
 };
 
 

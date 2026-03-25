@@ -12,34 +12,6 @@ export class ThreadServiceClient {
                credentials?: null | { [index: string]: string; },
                options?: null | { [index: string]: any; });
 
-  addIamBindings(
-    request: alis_open_iam_v1_iam_pb.AddIamBindingsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: google_iam_v1_policy_pb.Policy) => void
-  ): grpcWeb.ClientReadableStream<google_iam_v1_policy_pb.Policy>;
-
-  appendThreadEvent(
-    request: alis_a2a_extension_history_v1_history_pb.AppendThreadEventRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: alis_a2a_extension_history_v1_history_pb.AppendThreadEventResponse) => void
-  ): grpcWeb.ClientReadableStream<alis_a2a_extension_history_v1_history_pb.AppendThreadEventResponse>;
-
-  batchTestIamPermissions(
-    request: alis_open_iam_v1_iam_pb.BatchTestIamPermissionsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: alis_open_iam_v1_iam_pb.BatchTestIamPermissionsResponse) => void
-  ): grpcWeb.ClientReadableStream<alis_open_iam_v1_iam_pb.BatchTestIamPermissionsResponse>;
-
-  deleteThread(
-    request: alis_a2a_extension_history_v1_history_pb.DeleteThreadRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: google_protobuf_empty_pb.Empty) => void
-  ): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
-
   getIamPolicy(
     request: google_iam_v1_iam_policy_pb.GetIamPolicyRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -47,19 +19,26 @@ export class ThreadServiceClient {
                response: google_iam_v1_policy_pb.Policy) => void
   ): grpcWeb.ClientReadableStream<google_iam_v1_policy_pb.Policy>;
 
-  getThread(
-    request: alis_a2a_extension_history_v1_history_pb.GetThreadRequest,
+  setIamPolicy(
+    request: google_iam_v1_iam_policy_pb.SetIamPolicyRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
-               response: alis_a2a_extension_history_v1_history_pb.Thread) => void
-  ): grpcWeb.ClientReadableStream<alis_a2a_extension_history_v1_history_pb.Thread>;
+               response: google_iam_v1_policy_pb.Policy) => void
+  ): grpcWeb.ClientReadableStream<google_iam_v1_policy_pb.Policy>;
 
-  listThreadEvents(
-    request: alis_a2a_extension_history_v1_history_pb.ListThreadEventsRequest,
+  addIamBindings(
+    request: alis_open_iam_v1_iam_pb.AddIamBindingsRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
-               response: alis_a2a_extension_history_v1_history_pb.ListThreadEventsResponse) => void
-  ): grpcWeb.ClientReadableStream<alis_a2a_extension_history_v1_history_pb.ListThreadEventsResponse>;
+               response: google_iam_v1_policy_pb.Policy) => void
+  ): grpcWeb.ClientReadableStream<google_iam_v1_policy_pb.Policy>;
+
+  removeIamBindings(
+    request: alis_open_iam_v1_iam_pb.RemoveIamBindingsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: google_iam_v1_policy_pb.Policy) => void
+  ): grpcWeb.ClientReadableStream<google_iam_v1_policy_pb.Policy>;
 
   listThreads(
     request: alis_a2a_extension_history_v1_history_pb.ListThreadsRequest,
@@ -68,31 +47,38 @@ export class ThreadServiceClient {
                response: alis_a2a_extension_history_v1_history_pb.ListThreadsResponse) => void
   ): grpcWeb.ClientReadableStream<alis_a2a_extension_history_v1_history_pb.ListThreadsResponse>;
 
-  removeIamBindings(
-    request: alis_open_iam_v1_iam_pb.RemoveIamBindingsRequest,
+  getThread(
+    request: alis_a2a_extension_history_v1_history_pb.GetThreadRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
-               response: google_iam_v1_policy_pb.Policy) => void
-  ): grpcWeb.ClientReadableStream<google_iam_v1_policy_pb.Policy>;
+               response: alis_a2a_extension_history_v1_history_pb.Thread) => void
+  ): grpcWeb.ClientReadableStream<alis_a2a_extension_history_v1_history_pb.Thread>;
 
-  setIamPolicy(
-    request: google_iam_v1_iam_policy_pb.SetIamPolicyRequest,
+  deleteThread(
+    request: alis_a2a_extension_history_v1_history_pb.DeleteThreadRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
-               response: google_iam_v1_policy_pb.Policy) => void
-  ): grpcWeb.ClientReadableStream<google_iam_v1_policy_pb.Policy>;
+               response: google_protobuf_empty_pb.Empty) => void
+  ): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+
+  appendThreadEvent(
+    request: alis_a2a_extension_history_v1_history_pb.AppendThreadEventRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: alis_a2a_extension_history_v1_history_pb.AppendThreadEventResponse) => void
+  ): grpcWeb.ClientReadableStream<alis_a2a_extension_history_v1_history_pb.AppendThreadEventResponse>;
+
+  listThreadEvents(
+    request: alis_a2a_extension_history_v1_history_pb.ListThreadEventsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: alis_a2a_extension_history_v1_history_pb.ListThreadEventsResponse) => void
+  ): grpcWeb.ClientReadableStream<alis_a2a_extension_history_v1_history_pb.ListThreadEventsResponse>;
 
   streamThreadEvents(
     request: alis_a2a_extension_history_v1_history_pb.StreamThreadEventsRequest,
     metadata?: grpcWeb.Metadata
   ): grpcWeb.ClientReadableStream<alis_a2a_extension_history_v1_history_pb.ThreadEvent>;
-
-  testIamPermissions(
-    request: google_iam_v1_iam_policy_pb.TestIamPermissionsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: google_iam_v1_iam_policy_pb.TestIamPermissionsResponse) => void
-  ): grpcWeb.ClientReadableStream<google_iam_v1_iam_policy_pb.TestIamPermissionsResponse>;
 
 }
 
@@ -101,48 +87,8 @@ export class ThreadServicePromiseClient {
                credentials?: null | { [index: string]: string; },
                options?: null | { [index: string]: any; });
 
-  addIamBindings(
-    request: alis_open_iam_v1_iam_pb.AddIamBindingsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<google_iam_v1_policy_pb.Policy>;
-
-  appendThreadEvent(
-    request: alis_a2a_extension_history_v1_history_pb.AppendThreadEventRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<alis_a2a_extension_history_v1_history_pb.AppendThreadEventResponse>;
-
-  batchTestIamPermissions(
-    request: alis_open_iam_v1_iam_pb.BatchTestIamPermissionsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<alis_open_iam_v1_iam_pb.BatchTestIamPermissionsResponse>;
-
-  deleteThread(
-    request: alis_a2a_extension_history_v1_history_pb.DeleteThreadRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<google_protobuf_empty_pb.Empty>;
-
   getIamPolicy(
     request: google_iam_v1_iam_policy_pb.GetIamPolicyRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<google_iam_v1_policy_pb.Policy>;
-
-  getThread(
-    request: alis_a2a_extension_history_v1_history_pb.GetThreadRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<alis_a2a_extension_history_v1_history_pb.Thread>;
-
-  listThreadEvents(
-    request: alis_a2a_extension_history_v1_history_pb.ListThreadEventsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<alis_a2a_extension_history_v1_history_pb.ListThreadEventsResponse>;
-
-  listThreads(
-    request: alis_a2a_extension_history_v1_history_pb.ListThreadsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<alis_a2a_extension_history_v1_history_pb.ListThreadsResponse>;
-
-  removeIamBindings(
-    request: alis_open_iam_v1_iam_pb.RemoveIamBindingsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<google_iam_v1_policy_pb.Policy>;
 
@@ -151,15 +97,45 @@ export class ThreadServicePromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<google_iam_v1_policy_pb.Policy>;
 
+  addIamBindings(
+    request: alis_open_iam_v1_iam_pb.AddIamBindingsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<google_iam_v1_policy_pb.Policy>;
+
+  removeIamBindings(
+    request: alis_open_iam_v1_iam_pb.RemoveIamBindingsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<google_iam_v1_policy_pb.Policy>;
+
+  listThreads(
+    request: alis_a2a_extension_history_v1_history_pb.ListThreadsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<alis_a2a_extension_history_v1_history_pb.ListThreadsResponse>;
+
+  getThread(
+    request: alis_a2a_extension_history_v1_history_pb.GetThreadRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<alis_a2a_extension_history_v1_history_pb.Thread>;
+
+  deleteThread(
+    request: alis_a2a_extension_history_v1_history_pb.DeleteThreadRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<google_protobuf_empty_pb.Empty>;
+
+  appendThreadEvent(
+    request: alis_a2a_extension_history_v1_history_pb.AppendThreadEventRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<alis_a2a_extension_history_v1_history_pb.AppendThreadEventResponse>;
+
+  listThreadEvents(
+    request: alis_a2a_extension_history_v1_history_pb.ListThreadEventsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<alis_a2a_extension_history_v1_history_pb.ListThreadEventsResponse>;
+
   streamThreadEvents(
     request: alis_a2a_extension_history_v1_history_pb.StreamThreadEventsRequest,
     metadata?: grpcWeb.Metadata
   ): grpcWeb.ClientReadableStream<alis_a2a_extension_history_v1_history_pb.ThreadEvent>;
-
-  testIamPermissions(
-    request: google_iam_v1_iam_policy_pb.TestIamPermissionsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<google_iam_v1_iam_policy_pb.TestIamPermissionsResponse>;
 
 }
 

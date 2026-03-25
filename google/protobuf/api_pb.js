@@ -133,7 +133,8 @@ version: jspb.Message.getFieldWithDefault(msg, 4, ""),
 sourceContext: (f = msg.getSourceContext()) && google_protobuf_source_context_pb.SourceContext.toObject(includeInstance, f),
 mixinsList: jspb.Message.toObjectList(msg.getMixinsList(),
     proto.google.protobuf.Mixin.toObject, includeInstance),
-syntax: jspb.Message.getFieldWithDefault(msg, 7, 0)
+syntax: jspb.Message.getFieldWithDefault(msg, 7, 0),
+edition: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -201,6 +202,10 @@ proto.google.protobuf.Api.deserializeBinaryFromReader = function(msg, reader) {
     case 7:
       var value = /** @type {!proto.google.protobuf.Syntax} */ (reader.readEnum());
       msg.setSyntax(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
+      msg.setEdition(value);
       break;
     default:
       reader.skipField();
@@ -281,6 +286,13 @@ proto.google.protobuf.Api.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0.0) {
     writer.writeEnum(
       7,
+      f
+    );
+  }
+  f = message.getEdition();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -492,6 +504,24 @@ proto.google.protobuf.Api.prototype.setSyntax = function(value) {
 };
 
 
+/**
+ * optional string edition = 8;
+ * @return {string}
+ */
+proto.google.protobuf.Api.prototype.getEdition = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.google.protobuf.Api} returns this
+ */
+proto.google.protobuf.Api.prototype.setEdition = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -538,7 +568,8 @@ responseTypeUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
 responseStreaming: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
 optionsList: jspb.Message.toObjectList(msg.getOptionsList(),
     google_protobuf_type_pb.Option.toObject, includeInstance),
-syntax: jspb.Message.getFieldWithDefault(msg, 7, 0)
+syntax: jspb.Message.getFieldWithDefault(msg, 7, 0),
+edition: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -603,6 +634,10 @@ proto.google.protobuf.Method.deserializeBinaryFromReader = function(msg, reader)
     case 7:
       var value = /** @type {!proto.google.protobuf.Syntax} */ (reader.readEnum());
       msg.setSyntax(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
+      msg.setEdition(value);
       break;
     default:
       reader.skipField();
@@ -680,6 +715,13 @@ proto.google.protobuf.Method.serializeBinaryToWriter = function(message, writer)
   if (f !== 0.0) {
     writer.writeEnum(
       7,
+      f
+    );
+  }
+  f = message.getEdition();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -829,6 +871,24 @@ proto.google.protobuf.Method.prototype.getSyntax = function() {
  */
 proto.google.protobuf.Method.prototype.setSyntax = function(value) {
   return jspb.Message.setProto3EnumField(this, 7, value);
+};
+
+
+/**
+ * optional string edition = 8;
+ * @return {string}
+ */
+proto.google.protobuf.Method.prototype.getEdition = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.google.protobuf.Method} returns this
+ */
+proto.google.protobuf.Method.prototype.setEdition = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
@@ -995,4 +1055,4 @@ proto.google.protobuf.Mixin.prototype.setRoot = function(value) {
 goog.object.extend(exports, proto.google.protobuf);
 
 // Below is base64 encoded GeneratedCodeInfo proto
-// CiUKAgQAEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGNoKIN0KCiUKAgQBEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGMUQIMsQCiUKAgQCEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGL8WIMQWCicKBAQAAgASGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8YmUkgoEkKJwoEBAACABIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxj/SiCGSwonCgQEAAIBEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGNtMIOlMCicKBAQAAgESGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Yp08gtU8KJwoEBAACARIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxi4USDCUQonCgQEAAIBEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGOtTIPtTCicKBAQAAgISGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8YsVUgv1UKJwoEBAACAhIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxj/VyCNWAonCgQEAAICEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGJBaIJpaCicKBAQAAgISGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Yw1wg01wKJwoEBAACAxIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxjqXSD0XQonCgQEAAIDEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGNNfIN1fCicKBAQAAgQSGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Yv2Egz2EKJwoEBAACBBIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxigZCCwZAonCgQEAAIEEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGJNmIKVmCicKBAQAAgQSGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8YzGcg3GcKJwoEBAACBRIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxieaSCraQonCgQEAAIFEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGOZrIPNrCicKBAQAAgUSGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Y9G0g/W0KJwoEBAACBRIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxilcCC0cAonCgQEAAIGEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGOBxIOlxCicKBAQAAgYSGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Y9XMg/nMKKQoEBAECABIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxjWoAEg3aABCikKBAQBAgASGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8YwqIBIMmiAQopCgQEAQIBEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGIukASCcpAEKKQoEBAECARIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxiBpgEgkqYBCikKBAQBAgISGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Y1KcBIOenAQopCgQEAQICEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGNipASDrqQEKKQoEBAECAxIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxivqwEgwasBCikKBAQBAgMSGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Ypq0BILitAQopCgQEAQIEEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGPuuASCPrwEKKQoEBAECBBIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxiAsQEglLEBCikKBAQBAgUSGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Y7bIBIPuyAQopCgQEAQIFEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGMG1ASDPtQEKKQoEBAECBRIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxjVtwEg37cBCikKBAQBAgUSGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8YjroBIJ66AQopCgQEAQIGEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGM67ASDXuwEKKQoEBAECBhIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxjpvQEg8r0BCikKBAQCAgASGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Y5tsBIO3bAQopCgQEAgIAEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGNDdASDX3QEKKQoEBAICARIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxiM3wEgk98BCikKBAQCAgESGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Y9uABIP3gAQ==
+// CiUKAgQAEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGNoKIN0KCiUKAgQBEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGMUQIMsQCiUKAgQCEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGL8WIMQWCicKBAQAAgASGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8YtksgvUsKJwoEBAACABIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxicTSCjTQonCgQEAAIBEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGPhOIIZPCicKBAQAAgESGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8YxFEg0lEKJwoEBAACARIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxjVUyDfUwonCgQEAAIBEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGIhWIJhWCicKBAQAAgISGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Yzlcg3FcKJwoEBAACAhIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxicWiCqWgonCgQEAAICEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGK1cILdcCicKBAQAAgISGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Y4F4g8F4KJwoEBAACAxIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxiHYCCRYAonCgQEAAIDEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGPBhIPphCicKBAQAAgQSGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Y3GMg7GMKJwoEBAACBBIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxi9ZiDNZgonCgQEAAIEEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGLBoIMJoCicKBAQAAgQSGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Y6Wkg+WkKJwoEBAACBRIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxi7ayDIawonCgQEAAIFEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGINuIJBuCicKBAQAAgUSGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8YkXAgmnAKJwoEBAACBRIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxjCciDRcgonCgQEAAIGEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGP1zIIZ0CicKBAQAAgYSGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8YknYgm3YKJwoEBAACBxIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxjPdyDZdwonCgQEAAIHEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGLh5IMJ5CikKBAQBAgASGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8YuagBIMCoAQopCgQEAQIAEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGKWqASCsqgEKKQoEBAECARIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxjuqwEg/6sBCikKBAQBAgESGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Y5K0BIPWtAQopCgQEAQICEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGLevASDKrwEKKQoEBAECAhIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxi7sQEgzrEBCikKBAQBAgMSGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8YkrMBIKSzAQopCgQEAQIDEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGIm1ASCbtQEKKQoEBAECBBIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxjetgEg8rYBCikKBAQBAgQSGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Y47gBIPe4AQopCgQEAQIFEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGNC6ASDeugEKKQoEBAECBRIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxikvQEgsr0BCikKBAQBAgUSGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8YuL8BIMK/AQopCgQEAQIFEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGPHBASCBwgEKKQoEBAECBhIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxixwwEgusMBCikKBAQBAgYSGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8YzMUBINXFAQopCgQEAQIHEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGIzHASCWxwEKKQoEBAECBxIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxj7yAEghckBCikKBAQCAgASGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Y++YBIILnAQopCgQEAgIAEhlnb29nbGUvcHJvdG9idWYvYXBpLnByb3RvGOXoASDs6AEKKQoEBAICARIZZ29vZ2xlL3Byb3RvYnVmL2FwaS5wcm90bxih6gEgqOoBCikKBAQCAgESGWdvb2dsZS9wcm90b2J1Zi9hcGkucHJvdG8Yi+wBIJLsAQ==

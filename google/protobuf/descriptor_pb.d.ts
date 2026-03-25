@@ -48,6 +48,11 @@ export class FileDescriptorProto extends jspb.Message {
   clearWeakDependencyList(): FileDescriptorProto;
   addWeakDependency(value: number, index?: number): FileDescriptorProto;
 
+  getOptionDependencyList(): Array<string>;
+  setOptionDependencyList(value: Array<string>): FileDescriptorProto;
+  clearOptionDependencyList(): FileDescriptorProto;
+  addOptionDependency(value: string, index?: number): FileDescriptorProto;
+
   getMessageTypeList(): Array<DescriptorProto>;
   setMessageTypeList(value: Array<DescriptorProto>): FileDescriptorProto;
   clearMessageTypeList(): FileDescriptorProto;
@@ -103,6 +108,7 @@ export namespace FileDescriptorProto {
     dependencyList: Array<string>,
     publicDependencyList: Array<number>,
     weakDependencyList: Array<number>,
+    optionDependencyList: Array<string>,
     messageTypeList: Array<DescriptorProto.AsObject>,
     enumTypeList: Array<EnumDescriptorProto.AsObject>,
     serviceList: Array<ServiceDescriptorProto.AsObject>,
@@ -165,6 +171,11 @@ export class DescriptorProto extends jspb.Message {
   clearReservedNameList(): DescriptorProto;
   addReservedName(value: string, index?: number): DescriptorProto;
 
+  getVisibility(): SymbolVisibility;
+  setVisibility(value: SymbolVisibility): DescriptorProto;
+  hasVisibility(): boolean;
+  clearVisibility(): DescriptorProto;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DescriptorProto.AsObject;
   static toObject(includeInstance: boolean, msg: DescriptorProto): DescriptorProto.AsObject;
@@ -185,6 +196,7 @@ export namespace DescriptorProto {
     options?: MessageOptions.AsObject,
     reservedRangeList: Array<DescriptorProto.ReservedRange.AsObject>,
     reservedNameList: Array<string>,
+    visibility?: SymbolVisibility,
   }
 
   export class ExtensionRange extends jspb.Message {
@@ -495,6 +507,11 @@ export class EnumDescriptorProto extends jspb.Message {
   clearReservedNameList(): EnumDescriptorProto;
   addReservedName(value: string, index?: number): EnumDescriptorProto;
 
+  getVisibility(): SymbolVisibility;
+  setVisibility(value: SymbolVisibility): EnumDescriptorProto;
+  hasVisibility(): boolean;
+  clearVisibility(): EnumDescriptorProto;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EnumDescriptorProto.AsObject;
   static toObject(includeInstance: boolean, msg: EnumDescriptorProto): EnumDescriptorProto.AsObject;
@@ -510,6 +527,7 @@ export namespace EnumDescriptorProto {
     options?: EnumOptions.AsObject,
     reservedRangeList: Array<EnumDescriptorProto.EnumReservedRange.AsObject>,
     reservedNameList: Array<string>,
+    visibility?: SymbolVisibility,
   }
 
   export class EnumReservedRange extends jspb.Message {
@@ -1353,6 +1371,16 @@ export class FeatureSet extends jspb.Message {
   hasJsonFormat(): boolean;
   clearJsonFormat(): FeatureSet;
 
+  getEnforceNamingStyle(): FeatureSet.EnforceNamingStyle;
+  setEnforceNamingStyle(value: FeatureSet.EnforceNamingStyle): FeatureSet;
+  hasEnforceNamingStyle(): boolean;
+  clearEnforceNamingStyle(): FeatureSet;
+
+  getDefaultSymbolVisibility(): FeatureSet.VisibilityFeature.DefaultSymbolVisibility;
+  setDefaultSymbolVisibility(value: FeatureSet.VisibilityFeature.DefaultSymbolVisibility): FeatureSet;
+  hasDefaultSymbolVisibility(): boolean;
+  clearDefaultSymbolVisibility(): FeatureSet;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureSet.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureSet): FeatureSet.AsObject;
@@ -1369,7 +1397,32 @@ export namespace FeatureSet {
     utf8Validation?: FeatureSet.Utf8Validation,
     messageEncoding?: FeatureSet.MessageEncoding,
     jsonFormat?: FeatureSet.JsonFormat,
+    enforceNamingStyle?: FeatureSet.EnforceNamingStyle,
+    defaultSymbolVisibility?: FeatureSet.VisibilityFeature.DefaultSymbolVisibility,
   }
+
+  export class VisibilityFeature extends jspb.Message {
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): VisibilityFeature.AsObject;
+    static toObject(includeInstance: boolean, msg: VisibilityFeature): VisibilityFeature.AsObject;
+    static serializeBinaryToWriter(message: VisibilityFeature, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): VisibilityFeature;
+    static deserializeBinaryFromReader(message: VisibilityFeature, reader: jspb.BinaryReader): VisibilityFeature;
+  }
+
+  export namespace VisibilityFeature {
+    export type AsObject = {
+    }
+
+    export enum DefaultSymbolVisibility { 
+      DEFAULT_SYMBOL_VISIBILITY_UNKNOWN = 0,
+      EXPORT_ALL = 1,
+      EXPORT_TOP_LEVEL = 2,
+      LOCAL_ALL = 3,
+      STRICT = 4,
+    }
+  }
+
 
   export enum FieldPresence { 
     FIELD_PRESENCE_UNKNOWN = 0,
@@ -1406,6 +1459,12 @@ export namespace FeatureSet {
     JSON_FORMAT_UNKNOWN = 0,
     ALLOW = 1,
     LEGACY_BEST_EFFORT = 2,
+  }
+
+  export enum EnforceNamingStyle { 
+    ENFORCE_NAMING_STYLE_UNKNOWN = 0,
+    STYLE2024 = 1,
+    STYLE_LEGACY = 2,
   }
 }
 
@@ -1623,4 +1682,9 @@ export enum Edition {
   EDITION_99998_TEST_ONLY = 99998,
   EDITION_99999_TEST_ONLY = 99999,
   EDITION_MAX = 2147483647,
+}
+export enum SymbolVisibility { 
+  VISIBILITY_UNSET = 0,
+  VISIBILITY_LOCAL = 1,
+  VISIBILITY_EXPORT = 2,
 }
