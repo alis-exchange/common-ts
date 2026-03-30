@@ -15,11 +15,19 @@ export class Cron extends jspb.Message {
   getPrompt(): string;
   setPrompt(value: string): Cron;
 
-  getSchedule(): string;
-  setSchedule(value: string): Cron;
+  getExpr(): string;
+  setExpr(value: string): Cron;
 
   getTimezone(): string;
   setTimezone(value: string): Cron;
+
+  getAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setAt(value?: google_protobuf_timestamp_pb.Timestamp): Cron;
+  hasAt(): boolean;
+  clearAt(): Cron;
+
+  getType(): Cron.Type;
+  setType(value: Cron.Type): Cron;
 
   getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): Cron;
@@ -43,10 +51,18 @@ export namespace Cron {
   export type AsObject = {
     name: string,
     prompt: string,
-    schedule: string,
+    expr: string,
     timezone: string,
+    at?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    type: Cron.Type,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+
+  export enum Type { 
+    TYPE_UNSPECIFIED = 0,
+    TYPE_CRON = 1,
+    TYPE_AT = 2,
   }
 }
 
