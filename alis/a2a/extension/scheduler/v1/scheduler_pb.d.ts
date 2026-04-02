@@ -32,6 +32,9 @@ export class Cron extends jspb.Message {
   getEmail(): string;
   setEmail(value: string): Cron;
 
+  getContextId(): string;
+  setContextId(value: string): Cron;
+
   getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): Cron;
   hasCreateTime(): boolean;
@@ -60,6 +63,7 @@ export namespace Cron {
     type: Cron.Type,
     owner: string,
     email: string,
+    contextId: string,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }

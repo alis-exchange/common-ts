@@ -22,6 +22,18 @@ export class Thread extends jspb.Message {
   getAgentDisplayName(): string;
   setAgentDisplayName(value: string): Thread;
 
+  getNextSequence(): number;
+  setNextSequence(value: number): Thread;
+
+  getLatestSequence(): number;
+  setLatestSequence(value: number): Thread;
+
+  getReadSequence(): number;
+  setReadSequence(value: number): Thread;
+
+  getHasUnread(): boolean;
+  setHasUnread(value: boolean): Thread;
+
   getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): Thread;
   hasCreateTime(): boolean;
@@ -41,6 +53,10 @@ export namespace Thread {
     displayName: string,
     agentId: string,
     agentDisplayName: string,
+    nextSequence: number,
+    latestSequence: number,
+    readSequence: number,
+    hasUnread: boolean,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
@@ -69,6 +85,9 @@ export class ThreadEvent extends jspb.Message {
   hasArtifactUpdate(): boolean;
   clearArtifactUpdate(): ThreadEvent;
 
+  getSequence(): number;
+  setSequence(value: number): ThreadEvent;
+
   getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): ThreadEvent;
   hasCreateTime(): boolean;
@@ -91,6 +110,7 @@ export namespace ThreadEvent {
     message?: lf_a2a_v1_a2a_pb.Message.AsObject,
     statusUpdate?: lf_a2a_v1_a2a_pb.TaskStatusUpdateEvent.AsObject,
     artifactUpdate?: lf_a2a_v1_a2a_pb.TaskArtifactUpdateEvent.AsObject,
+    sequence: number,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 
