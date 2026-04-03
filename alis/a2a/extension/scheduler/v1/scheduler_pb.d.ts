@@ -12,6 +12,9 @@ export class Cron extends jspb.Message {
   getPrompt(): string;
   setPrompt(value: string): Cron;
 
+  getInitialPrompt(): string;
+  setInitialPrompt(value: string): Cron;
+
   getExpr(): string;
   setExpr(value: string): Cron;
 
@@ -35,6 +38,19 @@ export class Cron extends jspb.Message {
   getContextId(): string;
   setContextId(value: string): Cron;
 
+  getState(): Cron.State;
+  setState(value: Cron.State): Cron;
+
+  getLastRunTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLastRunTime(value?: google_protobuf_timestamp_pb.Timestamp): Cron;
+  hasLastRunTime(): boolean;
+  clearLastRunTime(): Cron;
+
+  getArchiveTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setArchiveTime(value?: google_protobuf_timestamp_pb.Timestamp): Cron;
+  hasArchiveTime(): boolean;
+  clearArchiveTime(): Cron;
+
   getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): Cron;
   hasCreateTime(): boolean;
@@ -57,6 +73,7 @@ export namespace Cron {
   export type AsObject = {
     name: string,
     prompt: string,
+    initialPrompt: string,
     expr: string,
     timezone: string,
     at?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -64,6 +81,9 @@ export namespace Cron {
     owner: string,
     email: string,
     contextId: string,
+    state: Cron.State,
+    lastRunTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    archiveTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
@@ -72,6 +92,12 @@ export namespace Cron {
     TYPE_UNSPECIFIED = 0,
     TYPE_CRON = 1,
     TYPE_AT = 2,
+  }
+
+  export enum State { 
+    STATE_UNSPECIFIED = 0,
+    STATE_ACTIVE = 1,
+    STATE_ARCHIVED = 2,
   }
 }
 
