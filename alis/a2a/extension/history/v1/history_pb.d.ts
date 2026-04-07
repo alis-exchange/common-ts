@@ -28,12 +28,6 @@ export class Thread extends jspb.Message {
   getLatestSequence(): number;
   setLatestSequence(value: number): Thread;
 
-  getReadSequence(): number;
-  setReadSequence(value: number): Thread;
-
-  getHasUnread(): boolean;
-  setHasUnread(value: boolean): Thread;
-
   getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): Thread;
   hasCreateTime(): boolean;
@@ -55,8 +49,6 @@ export namespace Thread {
     agentDisplayName: string,
     nextSequence: number,
     latestSequence: number,
-    readSequence: number,
-    hasUnread: boolean,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
@@ -123,6 +115,52 @@ export namespace ThreadEvent {
   }
 }
 
+export class UserThreadState extends jspb.Message {
+  getName(): string;
+  setName(value: string): UserThreadState;
+
+  getThread(): string;
+  setThread(value: string): UserThreadState;
+
+  getUser(): string;
+  setUser(value: string): UserThreadState;
+
+  getReadSequence(): number;
+  setReadSequence(value: number): UserThreadState;
+
+  getPinned(): boolean;
+  setPinned(value: boolean): UserThreadState;
+
+  getPinnedTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPinnedTime(value?: google_protobuf_timestamp_pb.Timestamp): UserThreadState;
+  hasPinnedTime(): boolean;
+  clearPinnedTime(): UserThreadState;
+
+  getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): UserThreadState;
+  hasUpdateTime(): boolean;
+  clearUpdateTime(): UserThreadState;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UserThreadState.AsObject;
+  static toObject(includeInstance: boolean, msg: UserThreadState): UserThreadState.AsObject;
+  static serializeBinaryToWriter(message: UserThreadState, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UserThreadState;
+  static deserializeBinaryFromReader(message: UserThreadState, reader: jspb.BinaryReader): UserThreadState;
+}
+
+export namespace UserThreadState {
+  export type AsObject = {
+    name: string,
+    thread: string,
+    user: string,
+    readSequence: number,
+    pinned: boolean,
+    pinnedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
 export class GetThreadRequest extends jspb.Message {
   getName(): string;
   setName(value: string): GetThreadRequest;
@@ -141,6 +179,30 @@ export class GetThreadRequest extends jspb.Message {
 }
 
 export namespace GetThreadRequest {
+  export type AsObject = {
+    name: string,
+    readMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class GetUserThreadStateRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): GetUserThreadStateRequest;
+
+  getReadMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setReadMask(value?: google_protobuf_field_mask_pb.FieldMask): GetUserThreadStateRequest;
+  hasReadMask(): boolean;
+  clearReadMask(): GetUserThreadStateRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetUserThreadStateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetUserThreadStateRequest): GetUserThreadStateRequest.AsObject;
+  static serializeBinaryToWriter(message: GetUserThreadStateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetUserThreadStateRequest;
+  static deserializeBinaryFromReader(message: GetUserThreadStateRequest, reader: jspb.BinaryReader): GetUserThreadStateRequest;
+}
+
+export namespace GetUserThreadStateRequest {
   export type AsObject = {
     name: string,
     readMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
@@ -197,11 +259,49 @@ export namespace ListThreadsRequest {
   }
 }
 
+export class ThreadView extends jspb.Message {
+  getThread(): Thread | undefined;
+  setThread(value?: Thread): ThreadView;
+  hasThread(): boolean;
+  clearThread(): ThreadView;
+
+  getReadSequence(): number;
+  setReadSequence(value: number): ThreadView;
+
+  getHasUnread(): boolean;
+  setHasUnread(value: boolean): ThreadView;
+
+  getPinned(): boolean;
+  setPinned(value: boolean): ThreadView;
+
+  getPinnedTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPinnedTime(value?: google_protobuf_timestamp_pb.Timestamp): ThreadView;
+  hasPinnedTime(): boolean;
+  clearPinnedTime(): ThreadView;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ThreadView.AsObject;
+  static toObject(includeInstance: boolean, msg: ThreadView): ThreadView.AsObject;
+  static serializeBinaryToWriter(message: ThreadView, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ThreadView;
+  static deserializeBinaryFromReader(message: ThreadView, reader: jspb.BinaryReader): ThreadView;
+}
+
+export namespace ThreadView {
+  export type AsObject = {
+    thread?: Thread.AsObject,
+    readSequence: number,
+    hasUnread: boolean,
+    pinned: boolean,
+    pinnedTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
 export class ListThreadsResponse extends jspb.Message {
-  getThreadsList(): Array<Thread>;
-  setThreadsList(value: Array<Thread>): ListThreadsResponse;
+  getThreadsList(): Array<ThreadView>;
+  setThreadsList(value: Array<ThreadView>): ListThreadsResponse;
   clearThreadsList(): ListThreadsResponse;
-  addThreads(value?: Thread, index?: number): Thread;
+  addThreads(value?: ThreadView, index?: number): ThreadView;
 
   getNextPageToken(): string;
   setNextPageToken(value: string): ListThreadsResponse;
@@ -216,7 +316,7 @@ export class ListThreadsResponse extends jspb.Message {
 
 export namespace ListThreadsResponse {
   export type AsObject = {
-    threadsList: Array<Thread.AsObject>,
+    threadsList: Array<ThreadView.AsObject>,
     nextPageToken: string,
   }
 }
@@ -298,6 +398,32 @@ export namespace ListThreadEventsResponse {
   export type AsObject = {
     eventsList: Array<ThreadEvent.AsObject>,
     nextPageToken: string,
+  }
+}
+
+export class UpdateUserThreadStateRequest extends jspb.Message {
+  getUserThreadState(): UserThreadState | undefined;
+  setUserThreadState(value?: UserThreadState): UpdateUserThreadStateRequest;
+  hasUserThreadState(): boolean;
+  clearUserThreadState(): UpdateUserThreadStateRequest;
+
+  getUpdateMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setUpdateMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateUserThreadStateRequest;
+  hasUpdateMask(): boolean;
+  clearUpdateMask(): UpdateUserThreadStateRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateUserThreadStateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateUserThreadStateRequest): UpdateUserThreadStateRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateUserThreadStateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateUserThreadStateRequest;
+  static deserializeBinaryFromReader(message: UpdateUserThreadStateRequest, reader: jspb.BinaryReader): UpdateUserThreadStateRequest;
+}
+
+export namespace UpdateUserThreadStateRequest {
+  export type AsObject = {
+    userThreadState?: UserThreadState.AsObject,
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 

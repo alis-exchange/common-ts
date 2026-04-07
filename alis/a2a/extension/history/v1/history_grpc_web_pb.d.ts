@@ -68,6 +68,20 @@ export class ThreadServiceClient {
                response: alis_a2a_extension_history_v1_history_pb.AppendThreadEventResponse) => void
   ): grpcWeb.ClientReadableStream<alis_a2a_extension_history_v1_history_pb.AppendThreadEventResponse>;
 
+  getUserThreadState(
+    request: alis_a2a_extension_history_v1_history_pb.GetUserThreadStateRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: alis_a2a_extension_history_v1_history_pb.UserThreadState) => void
+  ): grpcWeb.ClientReadableStream<alis_a2a_extension_history_v1_history_pb.UserThreadState>;
+
+  updateUserThreadState(
+    request: alis_a2a_extension_history_v1_history_pb.UpdateUserThreadStateRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: alis_a2a_extension_history_v1_history_pb.UserThreadState) => void
+  ): grpcWeb.ClientReadableStream<alis_a2a_extension_history_v1_history_pb.UserThreadState>;
+
   listThreadEvents(
     request: alis_a2a_extension_history_v1_history_pb.ListThreadEventsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -126,6 +140,16 @@ export class ThreadServicePromiseClient {
     request: alis_a2a_extension_history_v1_history_pb.AppendThreadEventRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<alis_a2a_extension_history_v1_history_pb.AppendThreadEventResponse>;
+
+  getUserThreadState(
+    request: alis_a2a_extension_history_v1_history_pb.GetUserThreadStateRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<alis_a2a_extension_history_v1_history_pb.UserThreadState>;
+
+  updateUserThreadState(
+    request: alis_a2a_extension_history_v1_history_pb.UpdateUserThreadStateRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<alis_a2a_extension_history_v1_history_pb.UserThreadState>;
 
   listThreadEvents(
     request: alis_a2a_extension_history_v1_history_pb.ListThreadEventsRequest,

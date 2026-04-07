@@ -55,6 +55,17 @@ function deserialize_alis_a2a_extension_history_v1_GetThreadRequest(buffer_arg) 
   return alis_a2a_extension_history_v1_history_pb.GetThreadRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_alis_a2a_extension_history_v1_GetUserThreadStateRequest(arg) {
+  if (!(arg instanceof alis_a2a_extension_history_v1_history_pb.GetUserThreadStateRequest)) {
+    throw new Error('Expected argument of type alis.a2a.extension.history.v1.GetUserThreadStateRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_alis_a2a_extension_history_v1_GetUserThreadStateRequest(buffer_arg) {
+  return alis_a2a_extension_history_v1_history_pb.GetUserThreadStateRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_alis_a2a_extension_history_v1_ListThreadEventsRequest(arg) {
   if (!(arg instanceof alis_a2a_extension_history_v1_history_pb.ListThreadEventsRequest)) {
     throw new Error('Expected argument of type alis.a2a.extension.history.v1.ListThreadEventsRequest');
@@ -130,6 +141,28 @@ function serialize_alis_a2a_extension_history_v1_ThreadEvent(arg) {
 
 function deserialize_alis_a2a_extension_history_v1_ThreadEvent(buffer_arg) {
   return alis_a2a_extension_history_v1_history_pb.ThreadEvent.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_alis_a2a_extension_history_v1_UpdateUserThreadStateRequest(arg) {
+  if (!(arg instanceof alis_a2a_extension_history_v1_history_pb.UpdateUserThreadStateRequest)) {
+    throw new Error('Expected argument of type alis.a2a.extension.history.v1.UpdateUserThreadStateRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_alis_a2a_extension_history_v1_UpdateUserThreadStateRequest(buffer_arg) {
+  return alis_a2a_extension_history_v1_history_pb.UpdateUserThreadStateRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_alis_a2a_extension_history_v1_UserThreadState(arg) {
+  if (!(arg instanceof alis_a2a_extension_history_v1_history_pb.UserThreadState)) {
+    throw new Error('Expected argument of type alis.a2a.extension.history.v1.UserThreadState');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_alis_a2a_extension_history_v1_UserThreadState(buffer_arg) {
+  return alis_a2a_extension_history_v1_history_pb.UserThreadState.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_alis_iam_v1_AddIamBindingsRequest(arg) {
@@ -297,6 +330,30 @@ appendThreadEvent: {
     requestDeserialize: deserialize_alis_a2a_extension_history_v1_AppendThreadEventRequest,
     responseSerialize: serialize_alis_a2a_extension_history_v1_AppendThreadEventResponse,
     responseDeserialize: deserialize_alis_a2a_extension_history_v1_AppendThreadEventResponse,
+  },
+  // Gets per-user state for a Thread.
+getUserThreadState: {
+    path: '/alis.a2a.extension.history.v1.ThreadService/GetUserThreadState',
+    requestStream: false,
+    responseStream: false,
+    requestType: alis_a2a_extension_history_v1_history_pb.GetUserThreadStateRequest,
+    responseType: alis_a2a_extension_history_v1_history_pb.UserThreadState,
+    requestSerialize: serialize_alis_a2a_extension_history_v1_GetUserThreadStateRequest,
+    requestDeserialize: deserialize_alis_a2a_extension_history_v1_GetUserThreadStateRequest,
+    responseSerialize: serialize_alis_a2a_extension_history_v1_UserThreadState,
+    responseDeserialize: deserialize_alis_a2a_extension_history_v1_UserThreadState,
+  },
+  // Updates per-user state for a Thread.
+updateUserThreadState: {
+    path: '/alis.a2a.extension.history.v1.ThreadService/UpdateUserThreadState',
+    requestStream: false,
+    responseStream: false,
+    requestType: alis_a2a_extension_history_v1_history_pb.UpdateUserThreadStateRequest,
+    responseType: alis_a2a_extension_history_v1_history_pb.UserThreadState,
+    requestSerialize: serialize_alis_a2a_extension_history_v1_UpdateUserThreadStateRequest,
+    requestDeserialize: deserialize_alis_a2a_extension_history_v1_UpdateUserThreadStateRequest,
+    responseSerialize: serialize_alis_a2a_extension_history_v1_UserThreadState,
+    responseDeserialize: deserialize_alis_a2a_extension_history_v1_UserThreadState,
   },
   // Lists all events.
 listThreadEvents: {

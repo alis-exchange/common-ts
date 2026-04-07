@@ -19,6 +19,8 @@ interface IThreadServiceService extends grpc.ServiceDefinition<grpc.UntypedServi
   getThread: grpc.MethodDefinition<alis_a2a_extension_history_v1_history_pb.GetThreadRequest, alis_a2a_extension_history_v1_history_pb.Thread>;
   deleteThread: grpc.MethodDefinition<alis_a2a_extension_history_v1_history_pb.DeleteThreadRequest, google_protobuf_empty_pb.Empty>;
   appendThreadEvent: grpc.MethodDefinition<alis_a2a_extension_history_v1_history_pb.AppendThreadEventRequest, alis_a2a_extension_history_v1_history_pb.AppendThreadEventResponse>;
+  getUserThreadState: grpc.MethodDefinition<alis_a2a_extension_history_v1_history_pb.GetUserThreadStateRequest, alis_a2a_extension_history_v1_history_pb.UserThreadState>;
+  updateUserThreadState: grpc.MethodDefinition<alis_a2a_extension_history_v1_history_pb.UpdateUserThreadStateRequest, alis_a2a_extension_history_v1_history_pb.UserThreadState>;
   listThreadEvents: grpc.MethodDefinition<alis_a2a_extension_history_v1_history_pb.ListThreadEventsRequest, alis_a2a_extension_history_v1_history_pb.ListThreadEventsResponse>;
   streamThreadEvents: grpc.MethodDefinition<alis_a2a_extension_history_v1_history_pb.StreamThreadEventsRequest, alis_a2a_extension_history_v1_history_pb.ThreadEvent>;
 }
@@ -34,6 +36,8 @@ export interface IThreadServiceServer extends grpc.UntypedServiceImplementation 
   getThread: grpc.handleUnaryCall<alis_a2a_extension_history_v1_history_pb.GetThreadRequest, alis_a2a_extension_history_v1_history_pb.Thread>;
   deleteThread: grpc.handleUnaryCall<alis_a2a_extension_history_v1_history_pb.DeleteThreadRequest, google_protobuf_empty_pb.Empty>;
   appendThreadEvent: grpc.handleUnaryCall<alis_a2a_extension_history_v1_history_pb.AppendThreadEventRequest, alis_a2a_extension_history_v1_history_pb.AppendThreadEventResponse>;
+  getUserThreadState: grpc.handleUnaryCall<alis_a2a_extension_history_v1_history_pb.GetUserThreadStateRequest, alis_a2a_extension_history_v1_history_pb.UserThreadState>;
+  updateUserThreadState: grpc.handleUnaryCall<alis_a2a_extension_history_v1_history_pb.UpdateUserThreadStateRequest, alis_a2a_extension_history_v1_history_pb.UserThreadState>;
   listThreadEvents: grpc.handleUnaryCall<alis_a2a_extension_history_v1_history_pb.ListThreadEventsRequest, alis_a2a_extension_history_v1_history_pb.ListThreadEventsResponse>;
   streamThreadEvents: grpc.handleServerStreamingCall<alis_a2a_extension_history_v1_history_pb.StreamThreadEventsRequest, alis_a2a_extension_history_v1_history_pb.ThreadEvent>;
 }
@@ -64,6 +68,12 @@ export class ThreadServiceClient extends grpc.Client {
   appendThreadEvent(argument: alis_a2a_extension_history_v1_history_pb.AppendThreadEventRequest, callback: grpc.requestCallback<alis_a2a_extension_history_v1_history_pb.AppendThreadEventResponse>): grpc.ClientUnaryCall;
   appendThreadEvent(argument: alis_a2a_extension_history_v1_history_pb.AppendThreadEventRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<alis_a2a_extension_history_v1_history_pb.AppendThreadEventResponse>): grpc.ClientUnaryCall;
   appendThreadEvent(argument: alis_a2a_extension_history_v1_history_pb.AppendThreadEventRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<alis_a2a_extension_history_v1_history_pb.AppendThreadEventResponse>): grpc.ClientUnaryCall;
+  getUserThreadState(argument: alis_a2a_extension_history_v1_history_pb.GetUserThreadStateRequest, callback: grpc.requestCallback<alis_a2a_extension_history_v1_history_pb.UserThreadState>): grpc.ClientUnaryCall;
+  getUserThreadState(argument: alis_a2a_extension_history_v1_history_pb.GetUserThreadStateRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<alis_a2a_extension_history_v1_history_pb.UserThreadState>): grpc.ClientUnaryCall;
+  getUserThreadState(argument: alis_a2a_extension_history_v1_history_pb.GetUserThreadStateRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<alis_a2a_extension_history_v1_history_pb.UserThreadState>): grpc.ClientUnaryCall;
+  updateUserThreadState(argument: alis_a2a_extension_history_v1_history_pb.UpdateUserThreadStateRequest, callback: grpc.requestCallback<alis_a2a_extension_history_v1_history_pb.UserThreadState>): grpc.ClientUnaryCall;
+  updateUserThreadState(argument: alis_a2a_extension_history_v1_history_pb.UpdateUserThreadStateRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<alis_a2a_extension_history_v1_history_pb.UserThreadState>): grpc.ClientUnaryCall;
+  updateUserThreadState(argument: alis_a2a_extension_history_v1_history_pb.UpdateUserThreadStateRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<alis_a2a_extension_history_v1_history_pb.UserThreadState>): grpc.ClientUnaryCall;
   listThreadEvents(argument: alis_a2a_extension_history_v1_history_pb.ListThreadEventsRequest, callback: grpc.requestCallback<alis_a2a_extension_history_v1_history_pb.ListThreadEventsResponse>): grpc.ClientUnaryCall;
   listThreadEvents(argument: alis_a2a_extension_history_v1_history_pb.ListThreadEventsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<alis_a2a_extension_history_v1_history_pb.ListThreadEventsResponse>): grpc.ClientUnaryCall;
   listThreadEvents(argument: alis_a2a_extension_history_v1_history_pb.ListThreadEventsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<alis_a2a_extension_history_v1_history_pb.ListThreadEventsResponse>): grpc.ClientUnaryCall;

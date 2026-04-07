@@ -583,6 +583,128 @@ proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.appendT
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.alis.a2a.extension.history.v1.GetUserThreadStateRequest,
+ *   !proto.alis.a2a.extension.history.v1.UserThreadState>}
+ */
+const methodDescriptor_ThreadService_GetUserThreadState = new grpc.web.MethodDescriptor(
+  '/alis.a2a.extension.history.v1.ThreadService/GetUserThreadState',
+  grpc.web.MethodType.UNARY,
+  proto.alis.a2a.extension.history.v1.GetUserThreadStateRequest,
+  proto.alis.a2a.extension.history.v1.UserThreadState,
+  /**
+   * @param {!proto.alis.a2a.extension.history.v1.GetUserThreadStateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.alis.a2a.extension.history.v1.UserThreadState.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.alis.a2a.extension.history.v1.GetUserThreadStateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.alis.a2a.extension.history.v1.UserThreadState)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.alis.a2a.extension.history.v1.UserThreadState>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.getUserThreadState =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/alis.a2a.extension.history.v1.ThreadService/GetUserThreadState',
+      request,
+      metadata || {},
+      methodDescriptor_ThreadService_GetUserThreadState,
+      callback);
+};
+
+
+/**
+ * @param {!proto.alis.a2a.extension.history.v1.GetUserThreadStateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.alis.a2a.extension.history.v1.UserThreadState>}
+ *     Promise that resolves to the response
+ */
+proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.getUserThreadState =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/alis.a2a.extension.history.v1.ThreadService/GetUserThreadState',
+      request,
+      metadata || {},
+      methodDescriptor_ThreadService_GetUserThreadState);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.alis.a2a.extension.history.v1.UpdateUserThreadStateRequest,
+ *   !proto.alis.a2a.extension.history.v1.UserThreadState>}
+ */
+const methodDescriptor_ThreadService_UpdateUserThreadState = new grpc.web.MethodDescriptor(
+  '/alis.a2a.extension.history.v1.ThreadService/UpdateUserThreadState',
+  grpc.web.MethodType.UNARY,
+  proto.alis.a2a.extension.history.v1.UpdateUserThreadStateRequest,
+  proto.alis.a2a.extension.history.v1.UserThreadState,
+  /**
+   * @param {!proto.alis.a2a.extension.history.v1.UpdateUserThreadStateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.alis.a2a.extension.history.v1.UserThreadState.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.alis.a2a.extension.history.v1.UpdateUserThreadStateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.alis.a2a.extension.history.v1.UserThreadState)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.alis.a2a.extension.history.v1.UserThreadState>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.updateUserThreadState =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/alis.a2a.extension.history.v1.ThreadService/UpdateUserThreadState',
+      request,
+      metadata || {},
+      methodDescriptor_ThreadService_UpdateUserThreadState,
+      callback);
+};
+
+
+/**
+ * @param {!proto.alis.a2a.extension.history.v1.UpdateUserThreadStateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.alis.a2a.extension.history.v1.UserThreadState>}
+ *     Promise that resolves to the response
+ */
+proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.updateUserThreadState =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/alis.a2a.extension.history.v1.ThreadService/UpdateUserThreadState',
+      request,
+      metadata || {},
+      methodDescriptor_ThreadService_UpdateUserThreadState);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.alis.a2a.extension.history.v1.ListThreadEventsRequest,
  *   !proto.alis.a2a.extension.history.v1.ListThreadEventsResponse>}
  */
