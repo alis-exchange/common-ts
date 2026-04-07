@@ -6,15 +6,15 @@
 import * as alis_a2a_extension_history_v1_history_pb from "../../../../../alis/a2a/extension/history/v1/history_pb";
 import * as google_iam_v1_policy_pb from "../../../../../google/iam/v1/policy_pb";
 import * as google_iam_v1_iam_policy_pb from "../../../../../google/iam/v1/iam_policy_pb";
-import * as alis_open_iam_v1_iam_pb from "../../../../../alis/open/iam/v1/iam_pb";
+import * as alis_iam_v1_iam_pb from "../../../../../alis/iam/v1/iam_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
 import * as grpc from "grpc";
 
 interface IThreadServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
   getIamPolicy: grpc.MethodDefinition<google_iam_v1_iam_policy_pb.GetIamPolicyRequest, google_iam_v1_policy_pb.Policy>;
   setIamPolicy: grpc.MethodDefinition<google_iam_v1_iam_policy_pb.SetIamPolicyRequest, google_iam_v1_policy_pb.Policy>;
-  addIamBindings: grpc.MethodDefinition<alis_open_iam_v1_iam_pb.AddIamBindingsRequest, google_iam_v1_policy_pb.Policy>;
-  removeIamBindings: grpc.MethodDefinition<alis_open_iam_v1_iam_pb.RemoveIamBindingsRequest, google_iam_v1_policy_pb.Policy>;
+  addIamBindings: grpc.MethodDefinition<alis_iam_v1_iam_pb.AddIamBindingsRequest, google_iam_v1_policy_pb.Policy>;
+  removeIamBindings: grpc.MethodDefinition<alis_iam_v1_iam_pb.RemoveIamBindingsRequest, google_iam_v1_policy_pb.Policy>;
   listThreads: grpc.MethodDefinition<alis_a2a_extension_history_v1_history_pb.ListThreadsRequest, alis_a2a_extension_history_v1_history_pb.ListThreadsResponse>;
   getThread: grpc.MethodDefinition<alis_a2a_extension_history_v1_history_pb.GetThreadRequest, alis_a2a_extension_history_v1_history_pb.Thread>;
   deleteThread: grpc.MethodDefinition<alis_a2a_extension_history_v1_history_pb.DeleteThreadRequest, google_protobuf_empty_pb.Empty>;
@@ -28,8 +28,8 @@ export const ThreadServiceService: IThreadServiceService;
 export interface IThreadServiceServer extends grpc.UntypedServiceImplementation {
   getIamPolicy: grpc.handleUnaryCall<google_iam_v1_iam_policy_pb.GetIamPolicyRequest, google_iam_v1_policy_pb.Policy>;
   setIamPolicy: grpc.handleUnaryCall<google_iam_v1_iam_policy_pb.SetIamPolicyRequest, google_iam_v1_policy_pb.Policy>;
-  addIamBindings: grpc.handleUnaryCall<alis_open_iam_v1_iam_pb.AddIamBindingsRequest, google_iam_v1_policy_pb.Policy>;
-  removeIamBindings: grpc.handleUnaryCall<alis_open_iam_v1_iam_pb.RemoveIamBindingsRequest, google_iam_v1_policy_pb.Policy>;
+  addIamBindings: grpc.handleUnaryCall<alis_iam_v1_iam_pb.AddIamBindingsRequest, google_iam_v1_policy_pb.Policy>;
+  removeIamBindings: grpc.handleUnaryCall<alis_iam_v1_iam_pb.RemoveIamBindingsRequest, google_iam_v1_policy_pb.Policy>;
   listThreads: grpc.handleUnaryCall<alis_a2a_extension_history_v1_history_pb.ListThreadsRequest, alis_a2a_extension_history_v1_history_pb.ListThreadsResponse>;
   getThread: grpc.handleUnaryCall<alis_a2a_extension_history_v1_history_pb.GetThreadRequest, alis_a2a_extension_history_v1_history_pb.Thread>;
   deleteThread: grpc.handleUnaryCall<alis_a2a_extension_history_v1_history_pb.DeleteThreadRequest, google_protobuf_empty_pb.Empty>;
@@ -46,12 +46,12 @@ export class ThreadServiceClient extends grpc.Client {
   setIamPolicy(argument: google_iam_v1_iam_policy_pb.SetIamPolicyRequest, callback: grpc.requestCallback<google_iam_v1_policy_pb.Policy>): grpc.ClientUnaryCall;
   setIamPolicy(argument: google_iam_v1_iam_policy_pb.SetIamPolicyRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1_policy_pb.Policy>): grpc.ClientUnaryCall;
   setIamPolicy(argument: google_iam_v1_iam_policy_pb.SetIamPolicyRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1_policy_pb.Policy>): grpc.ClientUnaryCall;
-  addIamBindings(argument: alis_open_iam_v1_iam_pb.AddIamBindingsRequest, callback: grpc.requestCallback<google_iam_v1_policy_pb.Policy>): grpc.ClientUnaryCall;
-  addIamBindings(argument: alis_open_iam_v1_iam_pb.AddIamBindingsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1_policy_pb.Policy>): grpc.ClientUnaryCall;
-  addIamBindings(argument: alis_open_iam_v1_iam_pb.AddIamBindingsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1_policy_pb.Policy>): grpc.ClientUnaryCall;
-  removeIamBindings(argument: alis_open_iam_v1_iam_pb.RemoveIamBindingsRequest, callback: grpc.requestCallback<google_iam_v1_policy_pb.Policy>): grpc.ClientUnaryCall;
-  removeIamBindings(argument: alis_open_iam_v1_iam_pb.RemoveIamBindingsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1_policy_pb.Policy>): grpc.ClientUnaryCall;
-  removeIamBindings(argument: alis_open_iam_v1_iam_pb.RemoveIamBindingsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1_policy_pb.Policy>): grpc.ClientUnaryCall;
+  addIamBindings(argument: alis_iam_v1_iam_pb.AddIamBindingsRequest, callback: grpc.requestCallback<google_iam_v1_policy_pb.Policy>): grpc.ClientUnaryCall;
+  addIamBindings(argument: alis_iam_v1_iam_pb.AddIamBindingsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1_policy_pb.Policy>): grpc.ClientUnaryCall;
+  addIamBindings(argument: alis_iam_v1_iam_pb.AddIamBindingsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1_policy_pb.Policy>): grpc.ClientUnaryCall;
+  removeIamBindings(argument: alis_iam_v1_iam_pb.RemoveIamBindingsRequest, callback: grpc.requestCallback<google_iam_v1_policy_pb.Policy>): grpc.ClientUnaryCall;
+  removeIamBindings(argument: alis_iam_v1_iam_pb.RemoveIamBindingsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1_policy_pb.Policy>): grpc.ClientUnaryCall;
+  removeIamBindings(argument: alis_iam_v1_iam_pb.RemoveIamBindingsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_iam_v1_policy_pb.Policy>): grpc.ClientUnaryCall;
   listThreads(argument: alis_a2a_extension_history_v1_history_pb.ListThreadsRequest, callback: grpc.requestCallback<alis_a2a_extension_history_v1_history_pb.ListThreadsResponse>): grpc.ClientUnaryCall;
   listThreads(argument: alis_a2a_extension_history_v1_history_pb.ListThreadsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<alis_a2a_extension_history_v1_history_pb.ListThreadsResponse>): grpc.ClientUnaryCall;
   listThreads(argument: alis_a2a_extension_history_v1_history_pb.ListThreadsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<alis_a2a_extension_history_v1_history_pb.ListThreadsResponse>): grpc.ClientUnaryCall;

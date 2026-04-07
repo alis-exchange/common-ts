@@ -28,7 +28,7 @@ var google_iam_v1_policy_pb = require('../../../../../google/iam/v1/policy_pb.js
 
 var google_iam_v1_iam_policy_pb = require('../../../../../google/iam/v1/iam_policy_pb.js')
 
-var alis_open_iam_v1_iam_pb = require('../../../../../alis/open/iam/v1/iam_pb.js')
+var alis_iam_v1_iam_pb = require('../../../../../alis/iam/v1/iam_pb.js')
 
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js')
 
@@ -217,16 +217,16 @@ proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.setIamP
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.alis.open.iam.v1.AddIamBindingsRequest,
+ *   !proto.alis.iam.v1.AddIamBindingsRequest,
  *   !proto.google.iam.v1.Policy>}
  */
 const methodDescriptor_ThreadService_AddIamBindings = new grpc.web.MethodDescriptor(
   '/alis.a2a.extension.history.v1.ThreadService/AddIamBindings',
   grpc.web.MethodType.UNARY,
-  alis_open_iam_v1_iam_pb.AddIamBindingsRequest,
+  alis_iam_v1_iam_pb.AddIamBindingsRequest,
   google_iam_v1_policy_pb.Policy,
   /**
-   * @param {!proto.alis.open.iam.v1.AddIamBindingsRequest} request
+   * @param {!proto.alis.iam.v1.AddIamBindingsRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -237,7 +237,7 @@ const methodDescriptor_ThreadService_AddIamBindings = new grpc.web.MethodDescrip
 
 
 /**
- * @param {!proto.alis.open.iam.v1.AddIamBindingsRequest} request The
+ * @param {!proto.alis.iam.v1.AddIamBindingsRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -258,7 +258,7 @@ proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.addIamBindings
 
 
 /**
- * @param {!proto.alis.open.iam.v1.AddIamBindingsRequest} request The
+ * @param {!proto.alis.iam.v1.AddIamBindingsRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
@@ -278,16 +278,16 @@ proto.alis.a2a.extension.history.v1.ThreadServicePromiseClient.prototype.addIamB
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.alis.open.iam.v1.RemoveIamBindingsRequest,
+ *   !proto.alis.iam.v1.RemoveIamBindingsRequest,
  *   !proto.google.iam.v1.Policy>}
  */
 const methodDescriptor_ThreadService_RemoveIamBindings = new grpc.web.MethodDescriptor(
   '/alis.a2a.extension.history.v1.ThreadService/RemoveIamBindings',
   grpc.web.MethodType.UNARY,
-  alis_open_iam_v1_iam_pb.RemoveIamBindingsRequest,
+  alis_iam_v1_iam_pb.RemoveIamBindingsRequest,
   google_iam_v1_policy_pb.Policy,
   /**
-   * @param {!proto.alis.open.iam.v1.RemoveIamBindingsRequest} request
+   * @param {!proto.alis.iam.v1.RemoveIamBindingsRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -298,7 +298,7 @@ const methodDescriptor_ThreadService_RemoveIamBindings = new grpc.web.MethodDesc
 
 
 /**
- * @param {!proto.alis.open.iam.v1.RemoveIamBindingsRequest} request The
+ * @param {!proto.alis.iam.v1.RemoveIamBindingsRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -319,7 +319,7 @@ proto.alis.a2a.extension.history.v1.ThreadServiceClient.prototype.removeIamBindi
 
 
 /**
- * @param {!proto.alis.open.iam.v1.RemoveIamBindingsRequest} request The
+ * @param {!proto.alis.iam.v1.RemoveIamBindingsRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata

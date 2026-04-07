@@ -1,7 +1,7 @@
 import * as grpcWeb from 'grpc-web';
 
 import * as alis_a2a_extension_history_v1_history_pb from '../../../../../alis/a2a/extension/history/v1/history_pb'; // proto import: "alis/a2a/extension/history/v1/history.proto"
-import * as alis_open_iam_v1_iam_pb from '../../../../../alis/open/iam/v1/iam_pb'; // proto import: "alis/open/iam/v1/iam.proto"
+import * as alis_iam_v1_iam_pb from '../../../../../alis/iam/v1/iam_pb'; // proto import: "alis/iam/v1/iam.proto"
 import * as google_iam_v1_iam_policy_pb from '../../../../../google/iam/v1/iam_policy_pb'; // proto import: "google/iam/v1/iam_policy.proto"
 import * as google_iam_v1_policy_pb from '../../../../../google/iam/v1/policy_pb'; // proto import: "google/iam/v1/policy.proto"
 import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb'; // proto import: "google/protobuf/empty.proto"
@@ -27,14 +27,14 @@ export class ThreadServiceClient {
   ): grpcWeb.ClientReadableStream<google_iam_v1_policy_pb.Policy>;
 
   addIamBindings(
-    request: alis_open_iam_v1_iam_pb.AddIamBindingsRequest,
+    request: alis_iam_v1_iam_pb.AddIamBindingsRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
                response: google_iam_v1_policy_pb.Policy) => void
   ): grpcWeb.ClientReadableStream<google_iam_v1_policy_pb.Policy>;
 
   removeIamBindings(
-    request: alis_open_iam_v1_iam_pb.RemoveIamBindingsRequest,
+    request: alis_iam_v1_iam_pb.RemoveIamBindingsRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
                response: google_iam_v1_policy_pb.Policy) => void
@@ -98,12 +98,12 @@ export class ThreadServicePromiseClient {
   ): Promise<google_iam_v1_policy_pb.Policy>;
 
   addIamBindings(
-    request: alis_open_iam_v1_iam_pb.AddIamBindingsRequest,
+    request: alis_iam_v1_iam_pb.AddIamBindingsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<google_iam_v1_policy_pb.Policy>;
 
   removeIamBindings(
-    request: alis_open_iam_v1_iam_pb.RemoveIamBindingsRequest,
+    request: alis_iam_v1_iam_pb.RemoveIamBindingsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<google_iam_v1_policy_pb.Policy>;
 

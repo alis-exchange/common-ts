@@ -7,7 +7,7 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 var google_iam_v1_policy_pb = require('../../../../../google/iam/v1/policy_pb.js');
 var google_iam_v1_iam_policy_pb = require('../../../../../google/iam/v1/iam_policy_pb.js');
-var alis_open_iam_v1_iam_pb = require('../../../../../alis/open/iam/v1/iam_pb.js');
+var alis_iam_v1_iam_pb = require('../../../../../alis/iam/v1/iam_pb.js');
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 var lf_a2a_v1_a2a_pb = require('../../../../../lf/a2a/v1/a2a_pb.js');
 
@@ -132,26 +132,26 @@ function deserialize_alis_a2a_extension_history_v1_ThreadEvent(buffer_arg) {
   return alis_a2a_extension_history_v1_history_pb.ThreadEvent.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_alis_open_iam_v1_AddIamBindingsRequest(arg) {
-  if (!(arg instanceof alis_open_iam_v1_iam_pb.AddIamBindingsRequest)) {
-    throw new Error('Expected argument of type alis.open.iam.v1.AddIamBindingsRequest');
+function serialize_alis_iam_v1_AddIamBindingsRequest(arg) {
+  if (!(arg instanceof alis_iam_v1_iam_pb.AddIamBindingsRequest)) {
+    throw new Error('Expected argument of type alis.iam.v1.AddIamBindingsRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_alis_open_iam_v1_AddIamBindingsRequest(buffer_arg) {
-  return alis_open_iam_v1_iam_pb.AddIamBindingsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_alis_iam_v1_AddIamBindingsRequest(buffer_arg) {
+  return alis_iam_v1_iam_pb.AddIamBindingsRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_alis_open_iam_v1_RemoveIamBindingsRequest(arg) {
-  if (!(arg instanceof alis_open_iam_v1_iam_pb.RemoveIamBindingsRequest)) {
-    throw new Error('Expected argument of type alis.open.iam.v1.RemoveIamBindingsRequest');
+function serialize_alis_iam_v1_RemoveIamBindingsRequest(arg) {
+  if (!(arg instanceof alis_iam_v1_iam_pb.RemoveIamBindingsRequest)) {
+    throw new Error('Expected argument of type alis.iam.v1.RemoveIamBindingsRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_alis_open_iam_v1_RemoveIamBindingsRequest(buffer_arg) {
-  return alis_open_iam_v1_iam_pb.RemoveIamBindingsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_alis_iam_v1_RemoveIamBindingsRequest(buffer_arg) {
+  return alis_iam_v1_iam_pb.RemoveIamBindingsRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_google_iam_v1_GetIamPolicyRequest(arg) {
@@ -231,10 +231,10 @@ addIamBindings: {
     path: '/alis.a2a.extension.history.v1.ThreadService/AddIamBindings',
     requestStream: false,
     responseStream: false,
-    requestType: alis_open_iam_v1_iam_pb.AddIamBindingsRequest,
+    requestType: alis_iam_v1_iam_pb.AddIamBindingsRequest,
     responseType: google_iam_v1_policy_pb.Policy,
-    requestSerialize: serialize_alis_open_iam_v1_AddIamBindingsRequest,
-    requestDeserialize: deserialize_alis_open_iam_v1_AddIamBindingsRequest,
+    requestSerialize: serialize_alis_iam_v1_AddIamBindingsRequest,
+    requestDeserialize: deserialize_alis_iam_v1_AddIamBindingsRequest,
     responseSerialize: serialize_google_iam_v1_Policy,
     responseDeserialize: deserialize_google_iam_v1_Policy,
   },
@@ -243,10 +243,10 @@ removeIamBindings: {
     path: '/alis.a2a.extension.history.v1.ThreadService/RemoveIamBindings',
     requestStream: false,
     responseStream: false,
-    requestType: alis_open_iam_v1_iam_pb.RemoveIamBindingsRequest,
+    requestType: alis_iam_v1_iam_pb.RemoveIamBindingsRequest,
     responseType: google_iam_v1_policy_pb.Policy,
-    requestSerialize: serialize_alis_open_iam_v1_RemoveIamBindingsRequest,
-    requestDeserialize: deserialize_alis_open_iam_v1_RemoveIamBindingsRequest,
+    requestSerialize: serialize_alis_iam_v1_RemoveIamBindingsRequest,
+    requestDeserialize: deserialize_alis_iam_v1_RemoveIamBindingsRequest,
     responseSerialize: serialize_google_iam_v1_Policy,
     responseDeserialize: deserialize_google_iam_v1_Policy,
   },
