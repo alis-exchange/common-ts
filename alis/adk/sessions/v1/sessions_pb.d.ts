@@ -1,6 +1,8 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_protobuf_duration_pb from 'google-protobuf/google/protobuf/duration_pb'; // proto import: "google/protobuf/duration.proto"
+import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb'; // proto import: "google/protobuf/empty.proto"
+import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb'; // proto import: "google/protobuf/field_mask.proto"
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb'; // proto import: "google/protobuf/struct.proto"
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb'; // proto import: "google/protobuf/timestamp.proto"
 import * as google_type_date_pb from '../../../../google/type/date_pb'; // proto import: "google/type/date.proto"
@@ -326,6 +328,260 @@ export namespace SessionEvent {
   export enum ModelVersionCase { 
     _MODEL_VERSION_NOT_SET = 0,
     MODEL_VERSION = 22,
+  }
+}
+
+export class CreateSessionRequest extends jspb.Message {
+  getSession(): Session | undefined;
+  setSession(value?: Session): CreateSessionRequest;
+  hasSession(): boolean;
+  clearSession(): CreateSessionRequest;
+
+  getSessionId(): string;
+  setSessionId(value: string): CreateSessionRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateSessionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateSessionRequest): CreateSessionRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateSessionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateSessionRequest;
+  static deserializeBinaryFromReader(message: CreateSessionRequest, reader: jspb.BinaryReader): CreateSessionRequest;
+}
+
+export namespace CreateSessionRequest {
+  export type AsObject = {
+    session?: Session.AsObject,
+    sessionId: string,
+  }
+}
+
+export class GetSessionRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): GetSessionRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetSessionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetSessionRequest): GetSessionRequest.AsObject;
+  static serializeBinaryToWriter(message: GetSessionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetSessionRequest;
+  static deserializeBinaryFromReader(message: GetSessionRequest, reader: jspb.BinaryReader): GetSessionRequest;
+}
+
+export namespace GetSessionRequest {
+  export type AsObject = {
+    name: string,
+  }
+}
+
+export class ListSessionsRequest extends jspb.Message {
+  getPageSize(): number;
+  setPageSize(value: number): ListSessionsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListSessionsRequest;
+
+  getFilter(): string;
+  setFilter(value: string): ListSessionsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListSessionsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSessionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSessionsRequest): ListSessionsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListSessionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSessionsRequest;
+  static deserializeBinaryFromReader(message: ListSessionsRequest, reader: jspb.BinaryReader): ListSessionsRequest;
+}
+
+export namespace ListSessionsRequest {
+  export type AsObject = {
+    pageSize: number,
+    pageToken: string,
+    filter: string,
+    orderBy: string,
+  }
+}
+
+export class ListSessionsResponse extends jspb.Message {
+  getSessionsList(): Array<Session>;
+  setSessionsList(value: Array<Session>): ListSessionsResponse;
+  clearSessionsList(): ListSessionsResponse;
+  addSessions(value?: Session, index?: number): Session;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListSessionsResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSessionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSessionsResponse): ListSessionsResponse.AsObject;
+  static serializeBinaryToWriter(message: ListSessionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSessionsResponse;
+  static deserializeBinaryFromReader(message: ListSessionsResponse, reader: jspb.BinaryReader): ListSessionsResponse;
+}
+
+export namespace ListSessionsResponse {
+  export type AsObject = {
+    sessionsList: Array<Session.AsObject>,
+    nextPageToken: string,
+  }
+}
+
+export class UpdateSessionRequest extends jspb.Message {
+  getSession(): Session | undefined;
+  setSession(value?: Session): UpdateSessionRequest;
+  hasSession(): boolean;
+  clearSession(): UpdateSessionRequest;
+
+  getUpdateMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setUpdateMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateSessionRequest;
+  hasUpdateMask(): boolean;
+  clearUpdateMask(): UpdateSessionRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSessionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSessionRequest): UpdateSessionRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateSessionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSessionRequest;
+  static deserializeBinaryFromReader(message: UpdateSessionRequest, reader: jspb.BinaryReader): UpdateSessionRequest;
+}
+
+export namespace UpdateSessionRequest {
+  export type AsObject = {
+    session?: Session.AsObject,
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class DeleteSessionRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): DeleteSessionRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteSessionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteSessionRequest): DeleteSessionRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteSessionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteSessionRequest;
+  static deserializeBinaryFromReader(message: DeleteSessionRequest, reader: jspb.BinaryReader): DeleteSessionRequest;
+}
+
+export namespace DeleteSessionRequest {
+  export type AsObject = {
+    name: string,
+  }
+}
+
+export class GetEventRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): GetEventRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetEventRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetEventRequest): GetEventRequest.AsObject;
+  static serializeBinaryToWriter(message: GetEventRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetEventRequest;
+  static deserializeBinaryFromReader(message: GetEventRequest, reader: jspb.BinaryReader): GetEventRequest;
+}
+
+export namespace GetEventRequest {
+  export type AsObject = {
+    name: string,
+  }
+}
+
+export class ListEventsRequest extends jspb.Message {
+  getParent(): string;
+  setParent(value: string): ListEventsRequest;
+
+  getPageSize(): number;
+  setPageSize(value: number): ListEventsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListEventsRequest;
+
+  getFilter(): string;
+  setFilter(value: string): ListEventsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListEventsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListEventsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListEventsRequest): ListEventsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListEventsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListEventsRequest;
+  static deserializeBinaryFromReader(message: ListEventsRequest, reader: jspb.BinaryReader): ListEventsRequest;
+}
+
+export namespace ListEventsRequest {
+  export type AsObject = {
+    parent: string,
+    pageSize: number,
+    pageToken: string,
+    filter: string,
+    orderBy: string,
+  }
+}
+
+export class ListEventsResponse extends jspb.Message {
+  getSessionEventsList(): Array<SessionEvent>;
+  setSessionEventsList(value: Array<SessionEvent>): ListEventsResponse;
+  clearSessionEventsList(): ListEventsResponse;
+  addSessionEvents(value?: SessionEvent, index?: number): SessionEvent;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListEventsResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListEventsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListEventsResponse): ListEventsResponse.AsObject;
+  static serializeBinaryToWriter(message: ListEventsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListEventsResponse;
+  static deserializeBinaryFromReader(message: ListEventsResponse, reader: jspb.BinaryReader): ListEventsResponse;
+}
+
+export namespace ListEventsResponse {
+  export type AsObject = {
+    sessionEventsList: Array<SessionEvent.AsObject>,
+    nextPageToken: string,
+  }
+}
+
+export class AppendEventRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): AppendEventRequest;
+
+  getEvent(): SessionEvent | undefined;
+  setEvent(value?: SessionEvent): AppendEventRequest;
+  hasEvent(): boolean;
+  clearEvent(): AppendEventRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AppendEventRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AppendEventRequest): AppendEventRequest.AsObject;
+  static serializeBinaryToWriter(message: AppendEventRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppendEventRequest;
+  static deserializeBinaryFromReader(message: AppendEventRequest, reader: jspb.BinaryReader): AppendEventRequest;
+}
+
+export namespace AppendEventRequest {
+  export type AsObject = {
+    name: string,
+    event?: SessionEvent.AsObject,
+  }
+}
+
+export class AppendEventResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AppendEventResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AppendEventResponse): AppendEventResponse.AsObject;
+  static serializeBinaryToWriter(message: AppendEventResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppendEventResponse;
+  static deserializeBinaryFromReader(message: AppendEventResponse, reader: jspb.BinaryReader): AppendEventResponse;
+}
+
+export namespace AppendEventResponse {
+  export type AsObject = {
   }
 }
 
